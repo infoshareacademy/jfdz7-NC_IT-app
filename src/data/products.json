@@ -1,0 +1,327 @@
+[
+  {
+    "id": 1,
+    "name": "Telewizor Mały",
+    "category": "TV",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 799.99
+      },
+      {
+        "shopId": 3,
+        "price": 689.00
+      },
+      {
+        "shopId": 4,
+        "price": 1000.00
+      },
+      {
+        "shopId": 5,
+        "price": 805.06
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Telewizor Duży",
+    "category": "TV",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 1799.99
+      },
+      {
+        "shopId": 3,
+        "price": 1689.00
+      },
+      {
+        "shopId": 4,
+        "price": 1500.00
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Telefon LG",
+    "category": "Telephone",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 899.99
+      },
+      {
+        "shopId": 3,
+        "price": 959.00
+      },
+      {
+        "shopId": 4,
+        "price": 999.00
+      },
+      {
+        "shopId": 5,
+        "price": 959.99
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Telefon Apple",
+    "category": "Telephone",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 1299.99
+      },
+      {
+        "shopId": 2,
+        "price": 1399.99
+      },
+      {
+        "shopId": 3,
+        "price": 1559.00
+      },
+      {
+        "shopId": 4,
+        "price": 1999.00
+      },
+      {
+        "shopId": 5,
+        "price": 959.99
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Telefon Sony",
+    "category": "Telephone",
+    "availabity": [
+      {
+        "shopId": 4,
+        "price": 1499.99
+      },
+      {
+        "shopId": 5,
+        "price": 1599.99
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Laptop Dell",
+    "category": "Laptop",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 2299.99
+      },
+      {
+        "shopId": 2,
+        "price": 2399.99
+      },
+      {
+        "shopId": 3,
+        "price": 2559.00
+      },
+      {
+        "shopId": 4,
+        "price": 2999.00
+      },
+      {
+        "shopId": 5,
+        "price": 2959.99
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Laptop Asus",
+    "category": "Laptop",
+    "availabity": [
+      {
+        "shopId": 2,
+        "price": 2799.99
+      },
+      {
+        "shopId": 3,
+        "price": 2559.00
+      },
+      {
+        "shopId": 4,
+        "price": 2999.00
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Laptop Lenovo",
+    "category": "Laptop",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 3299.99
+      },
+      {
+        "shopId": 2,
+        "price": 3399.99
+      },
+      {
+        "shopId": 4,
+        "price": 3099.00
+      },
+      {
+        "shopId": 5,
+        "price": 3959.99
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Laptop Apple",
+    "category": "Laptop",
+    "availabity": [
+      {
+        "shopId": 2,
+        "price": 4399.99
+      },
+      {
+        "shopId": 4,
+        "price": 4099.00
+      },
+      {
+        "shopId": 5,
+        "price": 4959.99
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Laptop HP",
+    "category": "Laptop",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 1199.99
+      },
+      {
+        "shopId": 2,
+        "price": 1299.99
+      },
+      {
+        "shopId": 5,
+        "price": 1659.99
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Monitor Lenovo",
+    "category": "Monitor",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 3299.99
+      },
+      {
+        "shopId": 2,
+        "price": 3399.99
+      },
+      {
+        "shopId": 4,
+        "price": 3099.00
+      },
+      {
+        "shopId": 5,
+        "price": 3959.99
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Monitor HP",
+    "category": "Monitor",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 13299.99
+      },
+      {
+        "shopId": 2,
+        "price": 33399.99
+      },
+      {
+        "shopId": 4,
+        "price": 43099.00
+      },
+      {
+        "shopId": 5,
+        "price": 53959.99
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Monitor Sony",
+    "category": "Monitor",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 299.99
+      },
+      {
+        "shopId": 4,
+        "price": 99.00
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Monitor Dell",
+    "category": "Monitor",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 2299.99
+      },
+      {
+        "shopId": 2,
+        "price": 9399.99
+      },
+      {
+        "shopId": 4,
+        "price": 5099.00
+      },
+      {
+        "shopId": 5,
+        "price": 3959.99
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Monitor LG",
+    "category": "Monitor",
+    "availabity": [
+      {
+        "shopId": 1,
+        "price": 7299.99
+      },
+      {
+        "shopId": 2,
+        "price": 6399.99
+      },
+      {
+        "shopId": 3,
+        "price": 6959.99
+      },
+      {
+        "shopId": 4,
+        "price": 6099.00
+      },
+      {
+        "shopId": 5,
+        "price": 7959.99
+      }
+    ]
+  }
+]
