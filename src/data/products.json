@@ -20,7 +20,8 @@
         "shopId": 5,
         "price": 805.06
       }
-    ]
+    ],
+    "img": "../images/tv.jpg"
   },
   {
     "id": 2,
@@ -39,7 +40,8 @@
         "shopId": 4,
         "price": 1500.00
       }
-    ]
+    ],
+    "img": "../images/tv.jpg"
   },
   {
     "id": 3,
@@ -62,7 +64,8 @@
         "shopId": 5,
         "price": 959.99
       }
-    ]
+    ],
+    "img": "../images/phone.jpg"
   },
   {
     "id": 4,
@@ -89,7 +92,8 @@
         "shopId": 5,
         "price": 959.99
       }
-    ]
+    ],
+    "img": "../images/phone.jpg"
   },
   {
     "id": 5,
@@ -104,7 +108,8 @@
         "shopId": 5,
         "price": 1599.99
       }
-    ]
+    ],
+    "img": "../images/phone.jpg"
   },
   {
     "id": 6,
@@ -131,7 +136,8 @@
         "shopId": 5,
         "price": 2959.99
       }
-    ]
+    ],
+    "img": "../images/laptop.jpg"
   },
   {
     "id": 7,
@@ -150,7 +156,8 @@
         "shopId": 4,
         "price": 2999.00
       }
-    ]
+    ],
+    "img": "../images/laptop.jpg"
   },
   {
     "id": 8,
@@ -173,7 +180,8 @@
         "shopId": 5,
         "price": 3959.99
       }
-    ]
+    ],
+    "img": "../images/laptop.jpg"
   },
   {
     "id": 9,
@@ -192,7 +200,8 @@
         "shopId": 5,
         "price": 4959.99
       }
-    ]
+    ],
+    "img": "../images/laptop.jpg"
   },
   {
     "id": 10,
@@ -211,7 +220,8 @@
         "shopId": 5,
         "price": 1659.99
       }
-    ]
+    ],
+    "img": "../images/laptop.jpg"
   },
   {
     "id": 11,
@@ -234,7 +244,8 @@
         "shopId": 5,
         "price": 3959.99
       }
-    ]
+    ],
+    "img": "../images/monitor.jpg"
   },
   {
     "id": 12,
@@ -257,7 +268,8 @@
         "shopId": 5,
         "price": 53959.99
       }
-    ]
+    ],
+    "img": "../images/monitor.jpg"
   },
   {
     "id": 13,
@@ -272,7 +284,8 @@
         "shopId": 4,
         "price": 99.00
       }
-    ]
+    ],
+    "img": "../images/monitor.jpg"
   },
   {
     "id": 14,
@@ -295,7 +308,8 @@
         "shopId": 5,
         "price": 3959.99
       }
-    ]
+    ],
+    "img": "../images/monitor.jpg"
   },
   {
     "id": 15,
@@ -322,6 +336,7 @@
         "shopId": 5,
         "price": 7959.99
       }
-    ]
+    ],
+    "img": "../images/monitor.jpg"
   }
 ]
