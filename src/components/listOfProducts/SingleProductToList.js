@@ -1,26 +1,33 @@
 import React, { Component } from 'react'
 
-
+import '../../style/SingleProductToList.css';
 
 class SingleProductToList extends Component {
+    handleRemoveClick = event => {
+        const productId = event.target.dataset.productId;
+        this.props.removeProduct(productId)
+    }
     render() {
-        const {products} = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
+        const { products, shops } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         return (
             <li>
-                {products.map((product, i) => {
+                {products.map((product, shops) => {
                     return (
                         <li key={product.id}>
                             <div>
                             <strong>Kategoria: {product.category}</strong><br/>
-                            <strong>{product.name}</strong>
-                                <ul>
-                                    <li>
-                                        Najniższa cena:
-                                    {Math.min.apply(Math,product.availabity.map((product) => {
+                            <strong>{product.name}</strong><br/>
+                                <span>
+                                    Najniższa cena: {Math.min.apply(Math,product.availabity.map((product) => {
                                         return (product.price)
-                                }))}
-                                    </li>
-                                </ul>
+                                    }))} zł
+                                </span>
+                                <br/>
+                                <button>Porównaj CENY</button>
+                                <br/>
+                                <button data-product-id={product.id} onClick={this.handleRemoveClick}>
+                                    USUŃ - TEST
+                                </button>
                             </div>
                         </li>
                     )
