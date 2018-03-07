@@ -1,22 +1,22 @@
 [
     {
-        "shopId": 1,
+        "shopId": "1",
         "name": "EuroAgdRtv"
     },
     {
-        "shopId": 2,
+        "shopId": "2",
         "name": "Media Markt"
     },
     {
-        "shopId": 3,
+        "shopId": "3",
         "name": "Saturn"
     },
     {
-        "shopId": 4,
+        "shopId": "4",
         "name": "MediaExpert"
     },
     {
-        "shopId": 5,
+        "shopId": "5",
         "name": "Biedronka"
     }
 ]
