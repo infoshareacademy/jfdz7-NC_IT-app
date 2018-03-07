@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Grid } from 'semantic-ui-react'
 import SingleProductToList from "./SingleProductToList";
 
 import products from '../../data/products.json'
@@ -20,12 +20,10 @@ class ListOfProductsTest extends Component {
     render() {
         return (
             <React.Fragment>
-                <ul>
                 <SingleProductToList
                     products={this.state.products}
                     shops={this.state.shops}
                     removeProduct={this.removeProduct}/>
-                </ul>
             </React.Fragment>
         );
     }
