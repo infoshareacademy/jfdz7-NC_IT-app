@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 
-import ListOfProductsTest from "./listOfProducts/ListOfProductsTest";
+import ListOfProductsTest from "./listOfProducts/ListOfProducts";
 
 
 class App extends Component {

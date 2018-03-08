@@ -9,7 +9,7 @@ class SingleProductToList extends Component {
         this.props.removeProduct(productId)
     }
     render() {
-        const { products, shops } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
+        const { products } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         return (
             <React.Fragment>
                 {products.map((product, shops) => {
@@ -18,7 +18,6 @@ class SingleProductToList extends Component {
                             <Grid centered columns={12} divided>
                                 <Grid.Row>
                                     <Grid.Column width={3}>
-                                        <strong><p>Kategoria: {product.category}</p></strong>
                                         <strong><p>{product.name}</p></strong>
                                     </Grid.Column>
                                     <Grid.Column width={3}>
@@ -27,6 +26,7 @@ class SingleProductToList extends Component {
                                             return (product.price)
                                             }))} zł
                                         </p></span>
+                                        <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
                                         <Button primary>Porównaj CENY</Button>
                                         <Button secondary data-product-id={product.id} onClick={this.handleRemoveClick}>
                                             USUŃ - TEST
