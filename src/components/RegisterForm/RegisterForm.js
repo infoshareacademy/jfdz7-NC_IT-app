@@ -43,7 +43,6 @@ class RegisterForm extends React.Component {
     };
 
     passwordVerification = () => {
-
     };
 
     renderTextInput = fieldSignUp => {
@@ -94,11 +93,20 @@ class RegisterForm extends React.Component {
                     {this.renderPasswordInput('userPassword')}<br/>
                     Pwtórz hasło
                     {this.renderPasswordInput('userPassword')}<br/>
-                    <button disabled={true}>
+                    <button disabled={false}>
                         Sign Up
                     </button>
                     <p>hasło musi posiadać min 8 znaków....</p>
                 </form>
+
+                <ul>
+                    {this.state.users.map((item, id) => <li>
+                        {item.name}<br/>
+                        {item.lastName}<br/>
+                        {item.email}<br/>
+                    </li>)}
+                </ul>
+
             </React.Fragment>
         );
     }
