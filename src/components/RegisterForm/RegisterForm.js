@@ -21,11 +21,11 @@ class RegisterForm extends React.Component {
     signUpUser = ({userName, userLastName, userEmail, userPassword}) => {
         this.setState({
             users: this.state.users.concat({
-                id: Date.now().toString(32),
-                name: userName,
-                lastName: userLastName,
-                email: userEmail,
-                password: userPassword
+                    id: Date.now().toString(32),
+                    name: userName,
+                    lastName: userLastName,
+                    email: userEmail,
+                    password: userPassword
                 }
             )
         })
@@ -35,19 +35,46 @@ class RegisterForm extends React.Component {
 
     };
 
+    renderTextInput = fieldSignUp => {
+        return (
+            <input
+                type={'text'}
+                name={fieldSignUp}
+                value={this.state[fieldSignUp]}
+                onChange={this.handleChange}
+            />
+        );
+    };
+
+    renderPasswordInput = fieldPassword => {
+        return (
+            <input
+                type={'password'}
+                name={'fieldPassword'}
+                value={this.state[fieldPassword]}
+                onChange={this.handleChange}
+                />
+        );
+    };
+
     render() {
         return (
             <React.Fragment>
                 <h2>Register Form</h2>
                 <form>
                     Imię
-                    <input/>
+                    {this.renderTextInput('userName')}<br/>
                     Nazwisko
-                    <input/>
+                    {this.renderTextInput('userLastName')}<br/>
                     E-mail
-                    <input/>
-                    Password
-                    <input/>
+                    {this.renderTextInput('userEmail')}<br/>
+                    Hasło
+                    {this.renderPasswordInput('userPassword')}<br/>
+                    Pwtórz hasło
+                    {this.renderPasswordInput('userPassword2')}<br/>
+                    <button>
+                        Sign Up
+                    </button>
                 </form>
             </React.Fragment>
         );
