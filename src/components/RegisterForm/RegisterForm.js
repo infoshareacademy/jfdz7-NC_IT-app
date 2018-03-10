@@ -18,6 +18,12 @@ class RegisterForm extends React.Component {
         };
     }
 
+    handleChange = ({target: {name, value}}) => {
+        this.setState({
+            [name]: value
+        })
+    };
+
     signUpUser = ({userName, userLastName, userEmail, userPassword}) => {
         this.setState({
             users: this.state.users.concat({
@@ -29,6 +35,11 @@ class RegisterForm extends React.Component {
                 }
             )
         })
+    };
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.signUpUser(this.state);
     };
 
     passwordVerification = () => {
@@ -46,22 +57,33 @@ class RegisterForm extends React.Component {
         );
     };
 
+    renderEmailInput = fieldEmail => {
+        return (
+            <input
+                type={'email'}
+                name={fieldEmail}
+                value={this.state[fieldEmail]}
+                onChange={this.handleChange}
+            />
+        );
+    };
+
     renderPasswordInput = fieldPassword => {
         return (
             <input
                 type={'password'}
-                name={'fieldPassword'}
+                name={fieldPassword}
                 value={this.state[fieldPassword]}
                 onChange={this.handleChange}
-                />
+            />
         );
     };
 
     render() {
         return (
             <React.Fragment>
-                <h2>Register Form</h2>
-                <form>
+                <h2>Registration Form</h2>
+                <form onClick={this.handleSubmit}>
                     Imię
                     {this.renderTextInput('userName')}<br/>
                     Nazwisko
@@ -71,7 +93,7 @@ class RegisterForm extends React.Component {
                     Hasło
                     {this.renderPasswordInput('userPassword')}<br/>
                     Pwtórz hasło
-                    {this.renderPasswordInput('userPassword2')}<br/>
+                    {this.renderPasswordInput('userPassword')}<br/>
                     <button>
                         Sign Up
                     </button>
