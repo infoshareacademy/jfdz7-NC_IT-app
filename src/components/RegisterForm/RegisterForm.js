@@ -89,14 +89,15 @@ class RegisterForm extends React.Component {
                     Nazwisko
                     {this.renderTextInput('userLastName')}<br/>
                     E-mail
-                    {this.renderTextInput('userEmail')}<br/>
+                    {this.renderEmailInput('userEmail')}<br/>
                     Hasło
                     {this.renderPasswordInput('userPassword')}<br/>
                     Pwtórz hasło
                     {this.renderPasswordInput('userPassword')}<br/>
-                    <button>
+                    <button disabled={true}>
                         Sign Up
                     </button>
+                    <p>hasło musi posiadać min 8 znaków....</p>
                 </form>
             </React.Fragment>
         );
