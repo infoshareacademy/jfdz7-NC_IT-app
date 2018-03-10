@@ -1,12 +1,15 @@
 import React from 'react';
 
+import RegisterForm from './RegisterForm/RegisterForm';
 
 class App extends React.Component {
-  render() {
-    return (
-      <h2>React app</h2>
-    );
-  }
+    render() {
+        return (
+            <React.Fragment>
+                <RegisterForm/>
+            </React.Fragment>
+        );
+    }
 }
 
 export default App;
