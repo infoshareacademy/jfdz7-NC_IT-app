@@ -39,6 +39,7 @@ class RegisterForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        event.stopPropagation();
         this.signUpUser(this.state);
     };
 
@@ -83,15 +84,15 @@ class RegisterForm extends React.Component {
             <React.Fragment>
                 <h2>Registration Form</h2>
                 <form onClick={this.handleSubmit}>
-                    Imię
+                    Imię:
                     {this.renderTextInput('userName')}<br/>
-                    Nazwisko
+                    Nazwisko:
                     {this.renderTextInput('userLastName')}<br/>
-                    E-mail
+                    E-mail:
                     {this.renderEmailInput('userEmail')}<br/>
-                    Hasło
+                    Hasło:
                     {this.renderPasswordInput('userPassword')}<br/>
-                    Pwtórz hasło
+                    Pwtórz hasło:
                     {this.renderPasswordInput('userPassword')}<br/>
                     <button disabled={false}>
                         Sign Up
