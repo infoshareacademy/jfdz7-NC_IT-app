@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {Route} from 'react-router-dom';
+
+import ListOfProductsTest from "./listOfProducts/ListOfProducts";
 
 
-class App extends React.Component {
-  render() {
-    return (
-      <h2>React app</h2>
-    );
-  }
+class App extends Component {
+    render() {
+        return (
+            <React.Fragment>
+              <Route exact path="/" component={ListOfProductsTest}/>
+            </React.Fragment>
+        );
+    }
 }
 
 export default App;
+
