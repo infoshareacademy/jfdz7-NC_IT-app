@@ -46,7 +46,7 @@ class RegisterForm extends React.Component {
     passwordVerification = () => {
     };
 
-    loginVerification = () => {
+    emailVerification = () => {
     };
 
     renderTextInput = fieldSignUp => {
