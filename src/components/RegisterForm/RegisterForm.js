@@ -9,6 +9,7 @@ class RegisterForm extends React.Component {
             users: [
                 {
                     id: Date.now().toString(32),
+                    login: 'jkow',
                     name: 'Jan',
                     lastName: 'Kowalski',
                     email: 'jan.kowalski@email.com',
@@ -24,10 +25,11 @@ class RegisterForm extends React.Component {
         })
     };
 
-    signUpUser = ({userName, userLastName, userEmail, userPassword}) => {
+    signUpUser = ({userLogin, userName, userLastName, userEmail, userPassword}) => {
         this.setState({
             users: this.state.users.concat({
                     id: Date.now().toString(32),
+                    login: userLogin,
                     name: userName,
                     lastName: userLastName,
                     email: userEmail,
@@ -90,6 +92,8 @@ class RegisterForm extends React.Component {
                     {this.renderTextInput('userLastName')}<br/>
                     E-mail:
                     {this.renderEmailInput('userEmail')}<br/>
+                    Login:
+                    {this.renderTextInput('userLogin')}<br/>
                     Hasło:
                     {this.renderPasswordInput('userPassword')}<br/>
                     Pwtórz hasło:
@@ -104,6 +108,7 @@ class RegisterForm extends React.Component {
                     {this.state.users.map((item, id) => <li>
                         {item.name}<br/>
                         {item.lastName}<br/>
+                        {item.login}<br/>
                         {item.email}<br/>
                     </li>)}
                 </ul>
