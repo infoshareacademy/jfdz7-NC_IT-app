@@ -7,7 +7,8 @@ class RegisterForm extends React.Component {
             name: '',
             lastName: '',
             email: '',
-            password: ''
+            password: '',
+            passwordRepeat: ''
         },
         users: [
             {
@@ -51,7 +52,11 @@ class RegisterForm extends React.Component {
     };
 
     passwordVerification = () => {
-
+        const pass = this.state.form.password;
+        const passRepeat = this.state.form.passwordRepeat;
+        const passLength = 8;
+        return (pass === passRepeat && pass.length === passLength) ?
+            document.getElementsByTagName('button').setAttribute('disable', 'false') : 'powtttttt';
     };
 
     emailVerification = () => {
@@ -105,7 +110,7 @@ class RegisterForm extends React.Component {
                     {this.renderPasswordInput('userPassword')}<br/>
                     Powtórz hasło:
                     {this.renderPasswordInput('userPassword')}<br/>
-                    <button disabled={false}>
+                    <button disabled={true}>
                         Sign Up
                     </button>
                     <p>hasło musi posiadać min 8 znaków....</p>
