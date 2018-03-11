@@ -21,7 +21,6 @@ class RegisterForm extends React.Component {
         ]
     };
 
-
     handleChange = ({target: {name, value}}) => {
         this.setState({
             form: {
@@ -47,7 +46,7 @@ class RegisterForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        event.stopPropagation();
+        // event.stopPropagation();
         this.signUpUser(this.state);
     };
 
@@ -56,10 +55,10 @@ class RegisterForm extends React.Component {
         const passRepeat = this.state.form.passwordRepeat;
         const passLength = 8;
         return (pass === passRepeat && pass.length === passLength) ?
-            document.getElementsByTagName('button').setAttribute('disable', 'false') : 'powtttttt';
+            document.getElementsByTagName('button').setAttribute('disable', 'false') : alert('Hasło powinno posiadać minimum 8 znaków.');
     };
 
-    emailVerification = () => {
+    emailRepeatVerification = () => {
     };
 
     renderTextInput = fieldSignUp => {
@@ -96,6 +95,7 @@ class RegisterForm extends React.Component {
     };
 
     render() {
+        console.log(this.state.form.password);
         return (
             <React.Fragment>
                 <h2>Registration Form</h2>
@@ -117,7 +117,7 @@ class RegisterForm extends React.Component {
                 </form>
 
                 <ul>
-                    {this.state.users.map((item, id) => <li>
+                    {this.state.users.map((item, id) => <li key={id}>
                         {item.name}<br/>
                         {item.lastName}<br/>
                         {item.email}<br/>
