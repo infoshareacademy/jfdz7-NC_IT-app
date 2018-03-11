@@ -2,25 +2,32 @@ import React from 'react';
 
 class RegisterForm extends React.Component {
 
-    constructor(props) {
-        super(props);
+    state = {
+        form: {
+            name: '',
+            lastName: '',
+            email: '',
+            password: ''
+        },
+        users: [
+            {
+                id: Date.now().toString(32),
+                name: 'Jan',
+                lastName: 'Kowalski',
+                email: 'jan.kowalski@email.com',
+                password: 'jakies haslo'
+            }
+        ]
+    };
 
-        this.state = {
-            users: [
-                {
-                    id: Date.now().toString(32),
-                    name: 'Jan',
-                    lastName: 'Kowalski',
-                    email: 'jan.kowalski@email.com',
-                    password: 'jakies haslo'
-                }
-            ]
-        };
-    }
 
     handleChange = ({target: {name, value}}) => {
         this.setState({
-            [name]: value
+            form: {
+                ...this.state.form,
+                [name]: value
+            }
+
         })
     };
 
@@ -44,6 +51,7 @@ class RegisterForm extends React.Component {
     };
 
     passwordVerification = () => {
+
     };
 
     emailVerification = () => {
@@ -95,7 +103,7 @@ class RegisterForm extends React.Component {
                     {this.renderEmailInput('userEmail')}<br/>
                     Hasło:
                     {this.renderPasswordInput('userPassword')}<br/>
-                    Pwtórz hasło:
+                    Powtórz hasło:
                     {this.renderPasswordInput('userPassword')}<br/>
                     <button disabled={false}>
                         Sign Up
