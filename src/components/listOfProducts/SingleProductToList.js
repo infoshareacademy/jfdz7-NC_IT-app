@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Button } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 
 import '../../style/SingleProductToList.css';
 
@@ -12,7 +13,7 @@ class SingleProductToList extends Component {
         const { products } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         return (
             <React.Fragment>
-                {products.map((product, shops) => {
+                {products.map((product, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
                     return (
                         <div key={product.id}>
                             <Grid centered columns={12} divided>
@@ -42,4 +43,7 @@ class SingleProductToList extends Component {
     }
 }
 
-export default SingleProductToList
+export default connect(state => ({
+    products : state.products.data,
+    shops: state.shops.data
+}))(SingleProductToList)
