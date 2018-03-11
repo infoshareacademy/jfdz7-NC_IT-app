@@ -55,7 +55,7 @@ class RegisterForm extends React.Component {
         const passRepeat = this.state.form.passwordRepeat;
         const passLength = 8;
         return (pass === passRepeat && pass.length === passLength) ?
-            document.getElementsByTagName('button').setAttribute('disable', 'false') : alert('Hasło powinno posiadać minimum 8 znaków.');
+            document.getElementsByTagName('button').removeAttribute('disabled') : alert('Hasło powinno posiadać minimum 8 znaków.');
     };
 
     emailRepeatVerification = () => {
