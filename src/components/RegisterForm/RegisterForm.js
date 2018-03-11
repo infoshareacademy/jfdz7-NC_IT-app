@@ -13,7 +13,7 @@ class RegisterForm extends React.Component {
                     name: 'Jan',
                     lastName: 'Kowalski',
                     email: 'jan.kowalski@email.com',
-                    password: ''
+                    password: 'jakies haslo'
                 }
             ]
         };
@@ -46,6 +46,9 @@ class RegisterForm extends React.Component {
     };
 
     passwordVerification = () => {
+    };
+
+    loginVerification = () => {
     };
 
     renderTextInput = fieldSignUp => {
@@ -85,7 +88,7 @@ class RegisterForm extends React.Component {
         return (
             <React.Fragment>
                 <h2>Registration Form</h2>
-                <form onClick={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     Imię:
                     {this.renderTextInput('userName')}<br/>
                     Nazwisko:
