@@ -3,7 +3,10 @@ import React, {Component} from 'react'
 class SingleProductView extends Component {
     render() {
         return (
-            <h2></h2>
+            <ReaactFragment>
+                <h2></h2>
+                <p></p>
+            </ReaactFragment>
         )
     }
 }
