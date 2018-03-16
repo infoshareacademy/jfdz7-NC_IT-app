@@ -6,6 +6,10 @@ const initialState = {
 
 export default (state = initialState, action = {}) => {
     switch (action.type) {
+        case 'REMOVE':
+            return {
+                data: state.data.filter(product => product.id !== action.id)
+            };
         default:
             return state
     }
