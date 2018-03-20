@@ -6,10 +6,16 @@ import '../../style/SingleProductToList.css';
 
 class SingleProductToList extends Component {
     render() {
-        const { products } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
+        const { products, activeFilterNames } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         return (
             <React.Fragment>
-                {products.map((product, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
+                {products.filter(
+                    product =>
+                        activeFilterNames.length === 0
+                            ? true
+                            : activeFilterNames.includes(product.category)
+                )
+                    .map((product, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
                     return (
                         <div key={product.id}>
                             <Grid centered>
@@ -42,6 +48,7 @@ class SingleProductToList extends Component {
 const mapStateToProps = state => ({
     products: state.products.data,
     shops: state.shops.data,
+    activeFilterNames: state.filtering.activeFilterNames
 })
 
 const mapDispatchToProps = dispatch => ({

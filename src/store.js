@@ -1,11 +1,13 @@
 import { createStore, combineReducers } from 'redux'
 
-import products from './store/products'
-import shops from './store/shops'
+import products from './state/products'
+import shops from './state/shops'
+import filtering from './state/filtering'
 
 const reducer = combineReducers({
     products : products,
-    shops: shops
+    shops: shops,
+    filtering: filtering
 })
 
 const store = createStore(
