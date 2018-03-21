@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,EAAE;EACA,UAAU,EAAE,IAAI;;AAClB,EAAE;EACA,MAAM,EAAE,cAAc;EACtB,aAAa,EAAE,IAAI",
+"sources": ["SingleProductToList.sass"],
+"names": [],
+"file": "SingleProductToList.css"
+}
