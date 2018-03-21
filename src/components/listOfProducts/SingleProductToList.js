@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { addProducts } from '../../state/favorites'
+import { addFavorites } from '../../state/favorites'
 
 
 import '../../style/SingleProductToList.css';
@@ -9,7 +9,7 @@ import '../../style/SingleProductToList.css';
 class SingleProductToList extends Component {
     handleClick = event => {
         const productId = event.target.dataset.productId
-        this.props.addProducts(productId)
+        this.props.addFavorites(productId)
     }
 
     render() {
@@ -64,5 +64,5 @@ export default connect(
         shops: state.shops.data,
         activeFilterNames: state.filtering.activeFilterNames
     }),
-    { addProducts }
+    { addFavorites }
 )(SingleProductToList)

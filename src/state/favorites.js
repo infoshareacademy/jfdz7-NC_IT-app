@@ -49,14 +49,14 @@ export const disableSync = () => dispatch => {
     })
 }*/
 
-export const addProducts = productId => dispatch => {
+export const addFavorites = productId => dispatch => {
     favoritesRef.push(({
-        id: productId
+        key: productId
     }))
 }
 
-export const removeTask = taskId => dispatch => {
-    favoritesRef.child(taskId).remove()
+export const removeFavorites = favoriteId => dispatch => {
+    favoritesRef.child(favoriteId).remove()
 }
 
 // Initial state
