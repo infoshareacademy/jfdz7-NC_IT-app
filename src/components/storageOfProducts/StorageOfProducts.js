@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { Grid, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { removeFavorites } from '../../state/favorites'
+import { NavLink } from 'react-router-dom'
 
-import '../../style/SingleProductToList.css';
+
+import '../../style/ListOfProducts.css';
 
 class StorageOfProducts extends Component {
     handleRemoveClick = event => {
@@ -17,12 +19,12 @@ class StorageOfProducts extends Component {
                 {favorites.map((favorite, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
                         return (
                             <div key={favorite.id}>
-                                    <Grid centered>
-                                        <Grid.Row>
-                                            <Grid.Column width={6}>
+                                <Grid centered columns={2}>
+                                    <Grid.Row>
+                                        <Grid.Column floated='right' width={4}>
                                                 <strong><p>{products[favorite.key].name}</p></strong>
                                             </Grid.Column>
-                                            <Grid.Column width={6}>
+                                        <Grid.Column floated='right' width={6}>
                                         <span><p>
                                             Najniższa cena: {Math.min.apply(Math,products[favorite.key].availabity.map((product) => {
                                             return (product.price)
@@ -30,7 +32,7 @@ class StorageOfProducts extends Component {
                                         </p></span>
                                                 <p>Dostępny w <strong>{products[favorite.key].availabity.length}</strong> sklepach</p>
                                                 <Button secondary data-favorite-id={favorite.id} onClick={this.handleRemoveClick}>
-                                                    usuń
+                                                    USUŃ
                                                 </Button>
                                             </Grid.Column>
                                         </Grid.Row>
@@ -38,6 +40,9 @@ class StorageOfProducts extends Component {
                                 </div>
                         )
                     })}
+                <NavLink to="/">
+                    POWRÓT
+                </NavLink>
             </React.Fragment>
         )
     }

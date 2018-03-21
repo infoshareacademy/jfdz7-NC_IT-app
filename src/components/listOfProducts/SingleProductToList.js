@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 import { addFavorites } from '../../state/favorites'
 
 
-import '../../style/SingleProductToList.css';
-
 class SingleProductToList extends Component {
     handleClick = event => {
         const productId = event.target.dataset.productId
@@ -25,12 +23,12 @@ class SingleProductToList extends Component {
                     .map((product, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
                     return (
                         <div key={product.id}>
-                            <Grid centered>
+                            <Grid centered columns={2}>
                                 <Grid.Row>
-                                    <Grid.Column width={6}>
+                                    <Grid.Column floated='right' width={4}>
                                         <strong><p>{product.name}</p></strong>
                                     </Grid.Column>
-                                    <Grid.Column width={6}>
+                                    <Grid.Column floated='right' width={6}>
                                         <span><p>
                                             Najniższa cena: {Math.min.apply(Math,product.availabity.map((product) => {
                                             return (product.price)
@@ -39,7 +37,7 @@ class SingleProductToList extends Component {
                                         <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
                                         <Button primary>Porównaj CENY</Button>
                                         <Button secondary data-product-id={product.id} onClick={this.handleClick}>
-                                            DODAJ DO KOSZYKA
+                                            OBSERWUJ
                                         </Button>
                                     </Grid.Column>
                                 </Grid.Row>
