@@ -7,6 +7,9 @@ import { Grid, Button } from 'semantic-ui-react'
 class FilterListForm extends Component {
     render() {
         return (
+            <Grid centered>
+                <Grid.Row>
+                    <Grid.Column width={12}>
             <div>
                 {this.props.category.map(categoryName => (
                     <Button primary
@@ -18,6 +21,9 @@ class FilterListForm extends Component {
                 ))}
                 <Button primary onClick={() => this.props.deactivateFilter()}>POKAŻ WSZYSTKIE</Button>
             </div>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
         )
     }
 }
