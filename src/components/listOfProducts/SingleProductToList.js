@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 import { Grid, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
+import { addProducts } from '../../state/favorites'
+
 
 import '../../style/SingleProductToList.css';
 
 class SingleProductToList extends Component {
+    handleClick = event => {
+        const productId = event.target.dataset.productId
+        this.props.addProducts(productId)
+    }
+
     render() {
         const { products, activeFilterNames } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         return (
@@ -31,7 +38,7 @@ class SingleProductToList extends Component {
                                         </p></span>
                                         <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
                                         <Button primary>Porównaj CENY</Button>
-                                        <Button secondary data-product-id={product.id} onClick={() => this.props.remove(product.id)}>
+                                        <Button secondary data-product-id={product.id} onClick={this.handleClick}>
                                             USUŃ - TEST
                                         </Button>
                                     </Grid.Column>
@@ -45,15 +52,17 @@ class SingleProductToList extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    products: state.products.data,
-    shops: state.shops.data,
-    activeFilterNames: state.filtering.activeFilterNames
-})
 
-const mapDispatchToProps = dispatch => ({
-    remove: id => dispatch({type: 'REMOVE', id})
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(SingleProductToList)
+//const mapDispatchToProps = dispatch => ({
+    //addProducts: id => dispatch({type: 'REMOVE', id})
+//});
 
+export default connect(
+    state => ({
+        products: state.products.data,
+        shops: state.shops.data,
+        activeFilterNames: state.filtering.activeFilterNames
+    }),
+    { addProducts }
+)(SingleProductToList)
