@@ -39,7 +39,7 @@ class SingleProductToList extends Component {
                                         <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
                                         <Button primary>Porównaj CENY</Button>
                                         <Button secondary data-product-id={product.id} onClick={this.handleClick}>
-                                            USUŃ - TEST
+                                            DODAJ DO KOSZYKA
                                         </Button>
                                     </Grid.Column>
                                 </Grid.Row>

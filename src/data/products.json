@@ -3,6 +3,7 @@
     "id": "1",
     "name": "Telewizor Mały",
     "category": "TV",
+    "description": "Poznaj obraz o zachwycającym poziomie kontrastu, niespotykanej intensywności barw i niezwykłej głębi.",
     "availabity": [
       {
         "shopId": "1",
@@ -21,12 +22,13 @@
         "price": 805.06
       }
     ],
-    "img": "../images/tv.jpg"
+    "img": "https://brain-images-ssl.cdn.dixons.com/7/0/10161607/l_10161607_001.jpg"
   },
   {
     "id": "2",
     "name": "Telewizor Duży",
     "category": "TV",
+    "description": "Poznaj obraz o zachwycającym poziomie kontrastu, niespotykanej intensywności barw i niezwykłej głębi.",
     "availabity": [
       {
         "shopId": "1",
@@ -41,12 +43,13 @@
         "price": 1500.00
       }
     ],
-    "img": "../images/tv.jpg"
+    "img": "https://brain-images-ssl.cdn.dixons.com/7/0/10161607/l_10161607_001.jpg"
   },
   {
     "id": "3",
     "name": "Telefon LG",
     "category": "Telefony",
+    "description": "Precyzyjnie wykonana obudowa składa się niemal wyłącznie ze szkła i metalu. Dzięki temu konstrukcja nabrała elegancji i stylu. Zaokrąglone brzegi niezauważalnie łączą się z ekranem 5,9” FullView, który zajmuje 83% przodu smartfonu. Uzupełnia bezkompromisowa moc 8-rdzeniowego procesora, 4 aparaty fotograficzne i długi czas pracy na jednym ładowaniu.",
     "availabity": [
       {
         "shopId": "1",
@@ -65,12 +68,13 @@
         "price": 959.99
       }
     ],
-    "img": "../images/phone.jpg"
+    "img": "https://4.imimg.com/data4/BB/RH/MY-15241145/multimedia-mobile-phone-500x500.jpg"
   },
   {
     "id": "4",
     "name": "Telefon Apple",
     "category": "Telefony",
+    "description": "Precyzyjnie wykonana obudowa składa się niemal wyłącznie ze szkła i metalu. Dzięki temu konstrukcja nabrała elegancji i stylu. Zaokrąglone brzegi niezauważalnie łączą się z ekranem 5,9” FullView, który zajmuje 83% przodu smartfonu. Uzupełnia bezkompromisowa moc 8-rdzeniowego procesora, 4 aparaty fotograficzne i długi czas pracy na jednym ładowaniu.",
     "availabity": [
       {
         "shopId": "1",
@@ -93,12 +97,13 @@
         "price": 959.99
       }
     ],
-    "img": "../images/phone.jpg"
+    "img": "https://4.imimg.com/data4/BB/RH/MY-15241145/multimedia-mobile-phone-500x500.jpg"
   },
   {
     "id": "5",
     "name": "Telefon Sony",
     "category": "Telefony",
+    "description": "Precyzyjnie wykonana obudowa składa się niemal wyłącznie ze szkła i metalu. Dzięki temu konstrukcja nabrała elegancji i stylu. Zaokrąglone brzegi niezauważalnie łączą się z ekranem 5,9” FullView, który zajmuje 83% przodu smartfonu. Uzupełnia bezkompromisowa moc 8-rdzeniowego procesora, 4 aparaty fotograficzne i długi czas pracy na jednym ładowaniu.",
     "availabity": [
       {
         "shopId": "4",
@@ -109,12 +114,13 @@
         "price": 1599.99
       }
     ],
-    "img": "../images/phone.jpg"
+    "img": "https://4.imimg.com/data4/BB/RH/MY-15241145/multimedia-mobile-phone-500x500.jpg"
   },
   {
     "id": "6",
     "name": "Laptop Dell",
     "category": "Laptopy",
+    "description": "Laptop to poważna propozycja dla mobilnych graczy, a jego potężne komponenty i bezkompromisowa konstrukcja sprawiają, że możesz zmierzyć się z najbardziej wymagającą grą w praktycznie każdym miejscu.",
     "availabity": [
       {
         "shopId": "1",
@@ -137,12 +143,13 @@
         "price": 2959.99
       }
     ],
-    "img": "../images/laptop.jpg"
+    "img": "https://image.ceneostatic.pl/data/article_picture/39/57/ece8-6129-4596-80d5-8bde7668f758_large.jpg"
   },
   {
     "id": "7",
     "name": "Laptop Asus",
     "category": "Laptopy",
+    "description": "Laptop to poważna propozycja dla mobilnych graczy, a jego potężne komponenty i bezkompromisowa konstrukcja sprawiają, że możesz zmierzyć się z najbardziej wymagającą grą w praktycznie każdym miejscu.",
     "availabity": [
       {
         "shopId": "2",
@@ -157,12 +164,13 @@
         "price": 2999.00
       }
     ],
-    "img": "../images/laptop.jpg"
+    "img": "https://image.ceneostatic.pl/data/article_picture/39/57/ece8-6129-4596-80d5-8bde7668f758_large.jpg"
   },
   {
     "id": "8",
     "name": "Laptop Lenovo",
     "category": "Laptopy",
+    "description": "Laptop to poważna propozycja dla mobilnych graczy, a jego potężne komponenty i bezkompromisowa konstrukcja sprawiają, że możesz zmierzyć się z najbardziej wymagającą grą w praktycznie każdym miejscu.",
     "availabity": [
       {
         "shopId": "1",
@@ -181,12 +189,13 @@
         "price": 3959.99
       }
     ],
-    "img": "../images/laptop.jpg"
+    "img": "https://image.ceneostatic.pl/data/article_picture/39/57/ece8-6129-4596-80d5-8bde7668f758_large.jpg"
   },
   {
     "id": "9",
     "name": "Laptop Apple",
     "category": "Laptopy",
+    "description": "Laptop to poważna propozycja dla mobilnych graczy, a jego potężne komponenty i bezkompromisowa konstrukcja sprawiają, że możesz zmierzyć się z najbardziej wymagającą grą w praktycznie każdym miejscu.",
     "availabity": [
       {
         "shopId": "2",
@@ -201,12 +210,13 @@
         "price": 4959.99
       }
     ],
-    "img": "../images/laptop.jpg"
+    "img": "https://image.ceneostatic.pl/data/article_picture/39/57/ece8-6129-4596-80d5-8bde7668f758_large.jpg"
   },
   {
     "id": "10",
     "name": "Laptop HP",
     "category": "Laptopy",
+    "description": "Laptop to poważna propozycja dla mobilnych graczy, a jego potężne komponenty i bezkompromisowa konstrukcja sprawiają, że możesz zmierzyć się z najbardziej wymagającą grą w praktycznie każdym miejscu.",
     "availabity": [
       {
         "shopId": "1",
@@ -221,12 +231,13 @@
         "price": 1659.99
       }
     ],
-    "img": "../images/laptop.jpg"
+    "img": "https://image.ceneostatic.pl/data/article_picture/39/57/ece8-6129-4596-80d5-8bde7668f758_large.jpg"
   },
   {
     "id": "11",
     "name": "Monitor Lenovo",
     "category": "Monitory",
+    "description": "Poznaj ultra-panoramiczny monitor. To doskonały wybór zarówno do pracy, jak i rozrywki. Monitor ultra-panoramiczny LG to sposób na zupełnie nowe doznania w wielu dziedzinach życia: zabawy, oglądania filmów czy zwykłego surfowania po sieci.",
     "availabity": [
       {
         "shopId": "1",
@@ -245,12 +256,13 @@
         "price": 3959.99
       }
     ],
-    "img": "../images/monitor.jpg"
+    "img": "https://image.ceneostatic.pl/data/article_picture/4a/8a/045f-b81a-4842-81ca-59b51c450740_large.jpg"
   },
   {
     "id": "12",
     "name": "Monitor HP",
     "category": "Monitory",
+    "description": "Poznaj ultra-panoramiczny monitor. To doskonały wybór zarówno do pracy, jak i rozrywki. Monitor ultra-panoramiczny LG to sposób na zupełnie nowe doznania w wielu dziedzinach życia: zabawy, oglądania filmów czy zwykłego surfowania po sieci.",
     "availabity": [
       {
         "shopId": "1",
@@ -269,12 +281,13 @@
         "price": 53959.99
       }
     ],
-    "img": "../images/monitor.jpg"
+    "img": "https://image.ceneostatic.pl/data/article_picture/4a/8a/045f-b81a-4842-81ca-59b51c450740_large.jpg"
   },
   {
     "id": "13",
     "name": "Monitor Sony",
     "category": "Monitory",
+    "description": "Poznaj ultra-panoramiczny monitor. To doskonały wybór zarówno do pracy, jak i rozrywki. Monitor ultra-panoramiczny LG to sposób na zupełnie nowe doznania w wielu dziedzinach życia: zabawy, oglądania filmów czy zwykłego surfowania po sieci.",
     "availabity": [
       {
         "shopId": "1",
@@ -285,12 +298,13 @@
         "price": 99.00
       }
     ],
-    "img": "../images/monitor.jpg"
+    "img": "https://image.ceneostatic.pl/data/article_picture/4a/8a/045f-b81a-4842-81ca-59b51c450740_large.jpg"
   },
   {
     "id": "14",
     "name": "Monitor Dell",
     "category": "Monitory",
+    "description": "Poznaj ultra-panoramiczny monitor. To doskonały wybór zarówno do pracy, jak i rozrywki. Monitor ultra-panoramiczny LG to sposób na zupełnie nowe doznania w wielu dziedzinach życia: zabawy, oglądania filmów czy zwykłego surfowania po sieci.",
     "availabity": [
       {
         "shopId": "1",
@@ -309,12 +323,13 @@
         "price": 3959.99
       }
     ],
-    "img": "../images/monitor.jpg"
+    "img": "https://image.ceneostatic.pl/data/article_picture/4a/8a/045f-b81a-4842-81ca-59b51c450740_large.jpg"
   },
   {
     "id": "15",
     "name": "Monitor LG",
     "category": "Monitory",
+    "description": "Poznaj ultra-panoramiczny monitor. To doskonały wybór zarówno do pracy, jak i rozrywki. Monitor ultra-panoramiczny LG to sposób na zupełnie nowe doznania w wielu dziedzinach życia: zabawy, oglądania filmów czy zwykłego surfowania po sieci.",
     "availabity": [
       {
         "shopId": "1",
@@ -337,6 +352,6 @@
         "price": 7959.99
       }
     ],
-    "img": "../images/monitor.jpg"
+    "img": "https://image.ceneostatic.pl/data/article_picture/4a/8a/045f-b81a-4842-81ca-59b51c450740_large.jpg"
   }
 ]
