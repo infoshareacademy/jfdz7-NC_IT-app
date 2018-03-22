@@ -23,5 +23,17 @@ export const signUp = (email, password, userData) => dispatch => {
         })
 };
 
+export const signOut = () => dispatch => {
+    firebase.auth().signOut();
+};
 
+export default (state = initialState, action ={}) => {
+    switch (action.type) {
+        case SET_USER:
+            return {
+                ...state,
+                user: action.user
+            }
+    }
+}
 
