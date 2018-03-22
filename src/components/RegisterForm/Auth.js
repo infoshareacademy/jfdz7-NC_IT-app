@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {SignUpForm} from './SignUpForm';
-import {SignInForm} from './SignInForm';
+import SignUpForm from './SignUpForm';
+import SignInForm from './SignInForm';
 
 class Auth extends React.Component {
 

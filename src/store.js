@@ -1,11 +1,14 @@
-import {createStore, combineReducers, applyMiddleware, compose} from 'react-redux';
-import thunk from 'react-redux';
+import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
+import thunk from 'redux-thunk';
 import firebase from 'firebase';
 import './setupFirebase';
+
 import auth, {setUser} from "./state/auth";
+import tasks, {disableSync, enableSync} from "./state/tasks";
 
 const reducer = combineReducers({
-    auth
+    auth,
+    tasks
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

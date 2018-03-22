@@ -4,17 +4,22 @@ import {signUp} from '../../state/auth';
 
 class SignUpForm extends React.Component {
     state = {
+        firstName: '',
+        lastName: '',
         email: '',
-        password: ''
-    }
+        password: '',
+        error: null
+    };
 
     handleSubmit = event => {
         event.preventDefault();
 
+        const {email, password, error, ...userData} = this.state;
+
         // this.props.signUp(this.state.email, this.state.password);
 
         this.props
-            .signUp(this.state.email, this.state.password)
+            .signUp(email, password, userData)
             .catch(error => this.setState({error}))
     };
 
@@ -38,9 +43,11 @@ class SignUpForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <h2>Formularz Rejestracji</h2>
-                {this.state.error && <p>{this.state.error.message}</p>
-                <div>email: {this.renderInput('email')}</div>
-                <div>password: {this.renderInput('password')}</div>
+                {this.state.error && <p>{this.state.error.message}</p>}
+                <div>Imię: {this.renderInput('firstName')}</div>
+                <div>Nazwisko: {this.renderInput('lastName')}</div>
+                <div>E - mail: {this.renderInput('email')}</div>
+                <div>Password: {this.renderInput('password', 'password')}</div>
                 <button>Wyślij</button>
             </form>
         );

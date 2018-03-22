@@ -7,7 +7,7 @@ export const setUser = user => ({
     user
 });
 
-export const signIn = (email, password) => {
+export const signIn = (email, password, userData) => disptch => {
     return firebase.auth().signInWithEmailAndPassword(email, password)
 };
 
@@ -31,13 +31,15 @@ const initialState = {
     user: null
 };
 
-export default (state = initialState, action ={}) => {
+export default (state = initialState, action = {}) => {
     switch (action.type) {
         case SET_USER:
             return {
                 ...state,
                 user: action.user
             }
+        default:
+            return state
     }
 }
 

@@ -18,11 +18,11 @@ class SignInForm extends React.Component {
             .catch(error => this.setState({error}))
     };
 
-    handleChange({target: {name, value}}) {
+    handleChange = ({ target: { name, value } }) => {
         this.setState({
             [name]: value
         })
-    }
+    };
 
     renderInput(fieldName, type='text') {
         return (
@@ -40,8 +40,8 @@ class SignInForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <h2>Formularz Logowania</h2>
                 {this.state.error && <p>{this.state.error.message}</p>}
-                <div>email: {this.renderInput('email')}</div>
-                <div>password: {this.renderInput('password')}</div>
+                <div>E - mail: {this.renderInput('email')}</div>
+                <div>Password: {this.renderInput('password', 'password')}</div>
                 <button>Zaloguj</button>
             </form>
         );
