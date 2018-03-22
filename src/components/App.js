@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SignOutButton from './RegisterForm/SignOutButton';
+
 import Auth from '../components/RegisterForm/Auth';
 
 class App extends React.Component {
@@ -7,6 +9,7 @@ class App extends React.Component {
         return (
             <React.Fragment>
                 <Auth/>
+                <SignOutButton/>
             </React.Fragment>
         );
     }
