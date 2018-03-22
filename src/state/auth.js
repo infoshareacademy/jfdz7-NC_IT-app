@@ -1,0 +1,27 @@
+import firebase from 'firebase';
+
+const SET_USER = 'auth/SET_USER';
+
+export const setUser = user => ({
+    type: SET_USER,
+    user
+});
+
+export const signUp = (email, password) => {
+    return firebase.auth().signInWithEmailAndPassword(email, password)
+};
+
+export const signUp = (email, password, userData) => dispatch => {
+    return firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(user => {
+            firebase
+                .database()
+                .ref('/users/' + user.uid)
+                .set(userData)
+        })
+};
+
+
+
