@@ -11,6 +11,6 @@ ReactDOM.render(
         </Auth>
     </Provider>,
 document.getElementById('root')
-)
-;
+);
+
 registerServiceWorker();
