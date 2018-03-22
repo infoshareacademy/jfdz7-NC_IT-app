@@ -38,6 +38,7 @@ class SignUpForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <h2>Formularz Rejestracji</h2>
+                {this.state.error && <p>{this.state.error.message}</p>
                 <div>email: {this.renderInput('email')}</div>
                 <div>password: {this.renderInput('password')}</div>
                 <button>Wyślij</button>
