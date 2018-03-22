@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 class Auth extends React.Component {
 
     render() {
-        return this.props.user === null ? <p>Zaloguj się</p> : this.props.children
+        return this.props.user === null ? <SignUpForm/> : this.props.children
     }
 }
 
