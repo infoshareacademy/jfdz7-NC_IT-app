@@ -1,12 +1,12 @@
 import React from 'react';
 
-import RegisterForm from './RegisterForm/RegisterForm';
+import Auth from '../components/RegisterForm/Auth';
 
 class App extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <RegisterForm/>
+                <Auth/>
             </React.Fragment>
         );
     }
