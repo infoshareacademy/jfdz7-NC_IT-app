@@ -6,11 +6,16 @@ class SignInForm extends React.Component {
     state ={
         email: '',
         password: ''
-    }
+    };
 
     handleSubmit = event => {
         event.preventDefault();
-        this.props.signIn(this.state.email, this.state.password);
+
+        // this.props.signIn(this.state.email, this.state.password);
+
+        this.props
+            .signIn(this.state.email, this.state.password)
+            .catch(error => this.setState({error}))
     };
 
     handleChange({target: {name, value}}) {
@@ -34,6 +39,7 @@ class SignInForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <h2>Formularz Logowania</h2>
+                {this.state.error && <p>{this.state.error.message}</p>}
                 <div>email: {this.renderInput('email')}</div>
                 <div>password: {this.renderInput('password')}</div>
                 <button>Zaloguj</button>

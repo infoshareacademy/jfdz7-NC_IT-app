@@ -15,6 +15,6 @@ class Auth extends React.Component {
     }
 }
 
-export default connect ({
+export default connect (state => ({
     user: state.auth.user
-})(Auth);
+}))(Auth);
