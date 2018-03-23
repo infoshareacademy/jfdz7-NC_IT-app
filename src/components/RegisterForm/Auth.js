@@ -12,8 +12,8 @@ class Auth extends React.Component {
             <React.Fragment>
                 <Grid container>
                     <Grid.Column>
-                        <SignUpForm/>
                         <SignInForm/>
+                        <SignUpForm/>
                     </Grid.Column>
                 </Grid>
             </React.Fragment>

@@ -1,7 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {signUp} from '../../state/auth';
-import {Form, Header, Button, Icon} from 'semantic-ui-react';
+import {Form, Header, Button, Segment, Grid} from 'semantic-ui-react';
+
+import './SignUpForm.css';
 
 class SignUpForm extends React.Component {
     state = {
@@ -29,39 +31,67 @@ class SignUpForm extends React.Component {
         });
     };
 
-    renderInput(fieldName, type = 'text') {
-        return (
-            <input
-                name={fieldName}
-                value={this.state[fieldName]}
-                type={type}
-                onChange={this.handleChange}
-            />);
-    }
-
     render() {
         return (
-            <Form onSubmit={this.handleSubmit}>
-                <Header as='h2' textAlign='center' icon><Icon name='users' circular/>Formularz Rejestracji</Header>
-                {this.state.error && <p>{this.state.error.message}</p>}
-                <Form.Field>
-                    <label>Imię: </label>
-                    {this.renderInput('firstName')}
-                </Form.Field>
-                <Form.Field>
-                    <label>Nazwisko: </label>
-                    {this.renderInput('lastName')}
-                </Form.Field>
-                <Form.Field>
-                    <label>E - mail: </label>
-                    {this.renderInput('email')}
-                </Form.Field>
-                <Form.Field>
-                    <label>Password: </label>
-                    {this.renderInput('password', 'password')}
-                </Form.Field>
-                <Button secondary>Wyślij</Button>
-            </Form>
+                <Grid textAlign='center' style={{height: '60%'}} verticalAlign='middle'>
+                    <Grid.Column style={{maxWidth: 470}}>
+                        <Header as='h2' textAlign='center'>Formularz Rejestracji</Header>
+                        {this.state.error && <p>{this.state.error.message}</p>}
+                        <Form onSubmit={this.handleSubmit}>
+                            <Segment stacked>
+                                <Form.Field>
+                                    <Form.Input
+                                        fluid
+                                        icon='user'
+                                        iconPosition='left'
+                                        name='firstName'
+                                        type='text'
+                                        placeholder='Name'
+                                        value={this.state.firstName}
+                                        onChange={this.handleChange}
+                                    />
+                                </Form.Field>
+                                <Form.Field>
+                                    <Form.Input
+                                        fluid
+                                        icon='user'
+                                        iconPosition='left'
+                                        name='lastName'
+                                        type='text'
+                                        placeholder='Last name'
+                                        value={this.state.lastName}
+                                        onChange={this.handleChange}
+                                    />
+                                </Form.Field>
+                                <Form.Field>
+                                    <Form.Input
+                                        fluid
+                                        icon='mail'
+                                        iconPosition='left'
+                                        name='email'
+                                        type='email'
+                                        placeholder='E-mail address'
+                                        value={this.state.email}
+                                        onChange={this.handleChange}
+                                    />
+                                </Form.Field>
+                                <Form.Field>
+                                    <Form.Input
+                                        fluid
+                                        icon='lock'
+                                        iconPosition='left'
+                                        name='password'
+                                        type='password'
+                                        placeholder='Password'
+                                        value={this.state.password}
+                                        onChange={this.handleChange}
+                                    />
+                                </Form.Field>
+                                <Button id='button' fluid size='large'>Wyślij</Button>
+                            </Segment>
+                        </Form>
+                    </Grid.Column>
+                </Grid>
         );
     }
 }
