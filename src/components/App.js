@@ -8,8 +8,9 @@ class App extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Auth/>
-                <SignOutButton/>
+                <Auth>
+                    <SignOutButton/>
+                </Auth>
             </React.Fragment>
         );
     }

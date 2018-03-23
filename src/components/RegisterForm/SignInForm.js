@@ -11,8 +11,6 @@ class SignInForm extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        // this.props.signIn(this.state.email, this.state.password);
-
         this.props
             .signIn(this.state.email, this.state.password)
             .catch(error => this.setState({error}))

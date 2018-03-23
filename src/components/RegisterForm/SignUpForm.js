@@ -16,7 +16,6 @@ class SignUpForm extends React.Component {
 
         const {email, password, error, ...userData} = this.state;
 
-        // this.props.signUp(this.state.email, this.state.password);
 
         this.props
             .signUp(email, password, userData)
