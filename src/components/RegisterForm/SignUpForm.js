@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {signUp} from '../../state/auth';
+import {Form, Header, Button, Icon} from 'semantic-ui-react';
 
 class SignUpForm extends React.Component {
     state = {
@@ -30,25 +31,37 @@ class SignUpForm extends React.Component {
 
     renderInput(fieldName, type = 'text') {
         return (
-        <input
-            name={fieldName}
-            value={this.state[fieldName]}
-            type={type}
-            onChange={this.handleChange}
-        />);
+            <input
+                name={fieldName}
+                value={this.state[fieldName]}
+                type={type}
+                onChange={this.handleChange}
+            />);
     }
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <h2>Formularz Rejestracji</h2>
+            <Form onSubmit={this.handleSubmit}>
+                <Header as='h2' textAlign='center' icon><Icon name='users' circular/>Formularz Rejestracji</Header>
                 {this.state.error && <p>{this.state.error.message}</p>}
-                <div>Imię: {this.renderInput('firstName')}</div>
-                <div>Nazwisko: {this.renderInput('lastName')}</div>
-                <div>E - mail: {this.renderInput('email')}</div>
-                <div>Password: {this.renderInput('password', 'password')}</div>
-                <button>Wyślij</button>
-            </form>
+                <Form.Field>
+                    <label>Imię: </label>
+                    {this.renderInput('firstName')}
+                </Form.Field>
+                <Form.Field>
+                    <label>Nazwisko: </label>
+                    {this.renderInput('lastName')}
+                </Form.Field>
+                <Form.Field>
+                    <label>E - mail: </label>
+                    {this.renderInput('email')}
+                </Form.Field>
+                <Form.Field>
+                    <label>Password: </label>
+                    {this.renderInput('password', 'password')}
+                </Form.Field>
+                <Button secondary>Wyślij</Button>
+            </Form>
         );
     }
 }
