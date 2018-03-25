@@ -1,0 +1,11 @@
+#button {
+    background-color: #ff8454;
+    color: white;
+}
+
+.ui.header>.image:not(.icon):only-child, .ui.header>img:only-child {
+    background-color: #ff8454;
+    border-radius: 50%;
+    width: 60px;
+    padding: 3px;
+}
