@@ -2,13 +2,19 @@ import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import firebase from 'firebase';
 import './setupFirebase';
+import products from './state/products'
+import shops from './state/shops'
+import filtering from './state/filtering'
 
 import auth, {setUser} from "./state/auth";
 import tasks, {disableSync, enableSync} from "./state/tasks";
 
 const reducer = combineReducers({
     auth,
-    tasks
+    tasks,
+    products : products,
+    shops: shops,
+    filtering: filtering
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
