@@ -28,9 +28,6 @@ class FilterListForm extends Component {
                     PRZEJDŹ DO SCHOWKA
                 </NavLink>
             </div>
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
         )
     }
 }

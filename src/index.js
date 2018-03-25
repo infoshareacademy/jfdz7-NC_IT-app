@@ -7,6 +7,8 @@ import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
 import 'semantic-ui-css/semantic.min.css'
 import store from './store'
+import App from './components/App';
+import Auth from  './components/RegisterForm/Auth';
 import './setupFirebase'
 
 
