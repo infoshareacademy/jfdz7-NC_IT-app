@@ -14,7 +14,9 @@ class App extends React.Component {
                     <SignOutButton/>
                         <Route exact path="/" component={ListOfProductsTest}/>
                 </Auth>
+            </React.Fragment>
 
-
+        )}
+}
 export default App;
 
