@@ -34,7 +34,7 @@ class SignUpForm extends React.Component {
 
     render() {
         return (
-                <Grid textAlign='center' style={{height: '160%'}} verticalAlign='middle'>
+                <Grid textAlign='center' style={{height: '145%'}} verticalAlign='middle'>
                     <Grid.Column style={{maxWidth: 470}}>
                         <Header as='h2' textAlign='center'>
                             <Image src='./logo.svg'/>
