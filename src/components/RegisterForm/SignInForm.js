@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {signIn} from '../../state/auth';
-import {Form, Button, Header, Grid, Segment, Image} from 'semantic-ui-react';
+import {Form, Button, Header, Grid, Segment, Image, Message} from 'semantic-ui-react';
+import {NavLink} from 'react-router-dom';
 
 import './SignInForm.css';
 
@@ -27,7 +28,7 @@ class SignInForm extends React.Component {
 
     render() {
         return (
-            <Grid textAlign='center' style={{height: '60%'}} verticalAlign='middle'>
+            <Grid textAlign='center' style={{height: '160%'}} verticalAlign='middle'>
                 <Grid.Column style={{maxWidth: 470}}>
                     <Header as='h2' textAlign='center'>
                         <Image src='./logo.svg'/>
@@ -63,6 +64,9 @@ class SignInForm extends React.Component {
                             <Button id='button' fluid size='large'>Zaloguj</Button>
                         </Segment>
                     </Form>
+                    <Message>
+                        Pierwszy raz z Nami? Skorzystaj z <NavLink to='#'>formularza rejestracji!</NavLink>
+                    </Message>
                 </Grid.Column>
             </Grid>
         );

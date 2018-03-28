@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Header, Grid, Icon} from 'semantic-ui-react';
 
-import SignUpForm from './SignUpForm';
 import SignInForm from './SignInForm';
 
 class Auth extends React.Component {
@@ -13,7 +12,6 @@ class Auth extends React.Component {
                 <Grid container>
                     <Grid.Column>
                         <SignInForm/>
-                        <SignUpForm/>
                     </Grid.Column>
                 </Grid>
             </React.Fragment>
