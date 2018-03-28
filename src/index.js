@@ -12,11 +12,13 @@ import './setupFirebase'
 
 ReactDOM.render(
     <Provider store={store}>
-        <Auth>
-            <Router>
-                <App/>
-            </Router>
-        </Auth>
+        <Router>
+            <Auth>
+                <Router>
+                    <App/>
+                </Router>
+            </Auth>
+        </Router>
     </Provider>,
     document.getElementById('root')
 );

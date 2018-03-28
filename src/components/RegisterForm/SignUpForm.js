@@ -33,7 +33,7 @@ class SignUpForm extends React.Component {
 
     render() {
         return (
-                <Grid textAlign='center' style={{height: '60%'}} verticalAlign='middle'>
+                <Grid textAlign='center' style={{height: '160%'}} verticalAlign='middle'>
                     <Grid.Column style={{maxWidth: 470}}>
                         <Header as='h2' textAlign='center'>Formularz Rejestracji</Header>
                         {this.state.error && <p>{this.state.error.message}</p>}

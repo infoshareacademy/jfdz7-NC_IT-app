@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Grid} from 'semantic-ui-react';
+import {Route} from 'react-router-dom';
 
 import SignInForm from './SignInForm';
 import SignUpForm from './SignUpForm';
@@ -12,8 +13,8 @@ class Auth extends React.Component {
             <React.Fragment>
                     <Grid container>
                         <Grid.Column>
-                            <SignInForm/>
-
+                            <Route exact path='/' component={SignInForm}/>
+                            <Route path='/sign' component={SignUpForm}/>
                         </Grid.Column>
                     </Grid>
             </React.Fragment>
