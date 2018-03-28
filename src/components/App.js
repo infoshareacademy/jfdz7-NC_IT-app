@@ -17,7 +17,6 @@ class App extends React.Component {
                     <Route exact path="/storage" component={StorageOfProducts}/>
                 </Auth>
             </React.Fragment>
-
         )}
 }
 export default App;

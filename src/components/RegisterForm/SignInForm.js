@@ -62,11 +62,11 @@ class SignInForm extends React.Component {
                                 />
                             </Form.Field>
                             <Button id='button' fluid size='large'>Zaloguj</Button>
+                            <Message size='small'>
+                                Pierwszy raz z Nami? Skorzystaj z formularza rejestracji!
+                            </Message>
                         </Segment>
                     </Form>
-                    <Message>
-                        Pierwszy raz z Nami? Skorzystaj z <NavLink to='#'>formularza rejestracji!</NavLink>
-                    </Message>
                 </Grid.Column>
             </Grid>
         );
