@@ -6,3 +6,10 @@ body {
     background-color: #4691BF;
     color: white;
 }
+
+.ui.header>.image:not(.icon):only-child, .ui.header>img:only-child {
+    background-color: #4691BF;
+    border-radius: 50%;
+    width: 60px;
+    padding: 3px;
+}

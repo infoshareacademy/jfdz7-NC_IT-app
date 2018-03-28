@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {signUp} from '../../state/auth';
-import {Form, Header, Button, Segment, Grid} from 'semantic-ui-react';
+import {Form, Header, Button, Segment, Grid, Image, Message} from 'semantic-ui-react';
+import {NavLink} from 'react-router-dom';
 
 import './SignUpForm.css';
 
@@ -35,7 +36,10 @@ class SignUpForm extends React.Component {
         return (
                 <Grid textAlign='center' style={{height: '160%'}} verticalAlign='middle'>
                     <Grid.Column style={{maxWidth: 470}}>
-                        <Header as='h2' textAlign='center'>Formularz Rejestracji</Header>
+                        <Header as='h2' textAlign='center'>
+                            <Image src='./logo.svg'/>
+                            Formularz Rejestracji
+                        </Header>
                         {this.state.error && <p>{this.state.error.message}</p>}
                         <Form onSubmit={this.handleSubmit}>
                             <Segment stacked>
@@ -88,6 +92,10 @@ class SignUpForm extends React.Component {
                                     />
                                 </Form.Field>
                                 <Button id='button' fluid size='large'>Wyślij</Button>
+                                <Message size='small'>
+                                    Chcę wrócić do
+                                    <NavLink to='/'> formularza logowania.</NavLink>
+                                </Message>
                             </Segment>
                         </Form>
                     </Grid.Column>
