@@ -1,21 +1,22 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Header, Grid, Icon} from 'semantic-ui-react';
+import {Grid} from 'semantic-ui-react';
+import {Route} from 'react-router-dom';
 
-import SignUpForm from './SignUpForm';
 import SignInForm from './SignInForm';
+import SignUpForm from './SignUpForm';
 
 class Auth extends React.Component {
 
     render() {
         return this.props.user === null ? (
             <React.Fragment>
-                <Grid container>
-                    <Grid.Column>
-                        <SignInForm/>
-                        <SignUpForm/>
-                    </Grid.Column>
-                </Grid>
+                    <Grid container>
+                        <Grid.Column>
+                            <Route exact path='/' component={SignInForm}/>
+                            <Route path='/sign' component={SignUpForm}/>
+                        </Grid.Column>
+                    </Grid>
             </React.Fragment>
         ) : (this.props.children)
     }

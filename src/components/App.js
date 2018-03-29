@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom';
 import ListOfProducts from "./listOfProducts/ListOfProducts";
 import StorageOfProducts from "./storageOfProducts/StorageOfProducts";
 import SignOutButton from './RegisterForm/SignOutButton';
+import SignUpForm from './RegisterForm/SignUpForm';
 
 import Auth from '../components/RegisterForm/Auth';
 
@@ -17,7 +18,6 @@ class App extends React.Component {
                     <Route exact path="/storage" component={StorageOfProducts}/>
                 </Auth>
             </React.Fragment>
-
         )}
 }
 export default App;
