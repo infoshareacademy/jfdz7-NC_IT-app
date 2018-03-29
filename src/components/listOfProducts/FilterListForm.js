@@ -41,7 +41,7 @@ export default connect(
     state => ({
         category: Object.keys(
             state.products.data
-                .map(task => task.category)
+                .map(product => product.category)
                 .reduce((uniqueCategoryNames, nextCategoryName) => {
                     uniqueCategoryNames[nextCategoryName] = true
                     return uniqueCategoryNames
