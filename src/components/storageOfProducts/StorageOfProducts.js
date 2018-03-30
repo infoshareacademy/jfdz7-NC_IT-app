@@ -31,7 +31,7 @@ class StorageOfProducts extends Component {
                                         }))} zł
                                         </p></span>
                                                 <p>Dostępny w <strong>{favorite.productFavorite.availabity.length}</strong> sklepach</p>
-                                                <Button secondary data-favorite-id={favorite.productFavorite.id} onClick={this.handleRemoveClick}>
+                                                <Button secondary data-favorite-id={favorite.id} onClick={this.handleRemoveClick}>
                                                     USUŃ
                                                 </Button>
                                             </Grid.Column>
