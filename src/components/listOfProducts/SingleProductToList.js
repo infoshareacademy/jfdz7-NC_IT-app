@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import { Grid, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addFavorites } from '../../state/favorites'
+import _ from 'underscore'
 
 
 
 
 class SingleProductToList extends Component {
     render() {
-        const { products, activeFilterNames } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
+        const { products, activeFilterNames, favorites } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
+        const buttonBlock = favorites.map((favorite) => favorite.productFavorite.id);
         return (
             <React.Fragment>
                 {products.filter(
@@ -33,16 +35,21 @@ class SingleProductToList extends Component {
                                         </p></span>
                                         <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
                                         <Button primary>Porównaj CENY</Button>
-                                        <Button secondary data-product-id={product.id}
-                                                onClick={ event => {
-                                                    const productId = event.target.dataset.productId
-                                                    const productFavoriteArr = products.filter(product => product.id === productId)
-                                                    const productFavorite = Object.assign({}, ...productFavoriteArr)
-                                                    console.log(productFavorite)
-                                                    this.props.addFavorites(productFavorite)
-                                                }}>
-                                            OBSERWUJ
-                                        </Button>
+                                        <div>
+                                            { _.contains(buttonBlock, product.id)
+                                                ? <Button>Obserwujesz</Button>
+                                                : <Button secondary data-product-id={product.id}
+                                                          onClick={ event => {
+                                                              const productId = event.target.dataset.productId
+                                                              const productFavoriteArr = products.filter(product => product.id === productId)
+                                                              const productFavorite = Object.assign({}, ...productFavoriteArr)
+                                                              this.props.addFavorites(productFavorite)
+                                                          }}>
+                                                    OBSERWUJ
+                                                </Button>
+                                            }
+                                        </div>
+
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>
@@ -64,6 +71,7 @@ export default connect(
     state => ({
         products: state.products.data,
         shops: state.shops.data,
+        favorites: state.favorites.data,
         activeFilterNames: state.filtering.activeFilterNames
     }),
     { addFavorites }
