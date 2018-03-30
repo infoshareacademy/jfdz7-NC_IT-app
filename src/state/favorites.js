@@ -17,7 +17,7 @@ let callback
 export const enableSync = () => dispatch => {
     const userUid = firebase.auth().currentUser.uid
 
-    favoritesRef = firebase.database().ref('/storage/' + userUid + '/favorites')
+    favoritesRef = firebase.database().ref('/storage/' + userUid + '/favorites/')
     callback = snapshot => {
         const value = snapshot.val()
         const favorites = Object.entries(value || {}).map(([id, values]) => ({
@@ -49,9 +49,11 @@ export const disableSync = () => dispatch => {
     })
 }*/
 
-export const addFavorites = productId => dispatch => {
+export const addFavorites = (
+    productFavorite
+) => dispatch => {
     favoritesRef.push(({
-        key: productId
+        productFavorite
     }))
 }
 

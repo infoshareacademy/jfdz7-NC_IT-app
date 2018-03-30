@@ -4,12 +4,9 @@ import { connect } from 'react-redux'
 import { addFavorites } from '../../state/favorites'
 
 
-class SingleProductToList extends Component {
-    handleClick = event => {
-        const productId = event.target.dataset.productId
-        this.props.addFavorites(productId)
-    }
 
+
+class SingleProductToList extends Component {
     render() {
         const { products, activeFilterNames } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         return (
@@ -36,7 +33,14 @@ class SingleProductToList extends Component {
                                         </p></span>
                                         <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
                                         <Button primary>Porównaj CENY</Button>
-                                        <Button secondary data-product-id={product.id} onClick={this.handleClick}>
+                                        <Button secondary data-product-id={product.id}
+                                                onClick={ event => {
+                                                    const productId = event.target.dataset.productId
+                                                    const productFavoriteArr = products.filter(product => product.id === productId)
+                                                    const productFavorite = Object.assign({}, ...productFavoriteArr)
+                                                    console.log(productFavorite)
+                                                    this.props.addFavorites(productFavorite)
+                                                }}>
                                             OBSERWUJ
                                         </Button>
                                     </Grid.Column>
