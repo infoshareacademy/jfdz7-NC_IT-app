@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import { Grid, Button } from 'semantic-ui-react'
+import {Link} from 'react-router-dom';
 import { connect } from 'react-redux'
 import { addFavorites } from '../../state/favorites'
 import _ from 'underscore'
+import PreviewProduct from "../previewProduct/PreviewProduct"
+
 
 
 
@@ -34,7 +37,7 @@ class SingleProductToList extends Component {
                                             }))} zł
                                         </p></span>
                                         <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
-                                        <Button primary>Porównaj CENY</Button>
+                                        <PreviewProduct productId={product.id} data-product-id={product.id}/>
                                         <div>
                                             { _.contains(buttonBlock, product.id)
                                                 ? <Button>Obserwujesz</Button>
