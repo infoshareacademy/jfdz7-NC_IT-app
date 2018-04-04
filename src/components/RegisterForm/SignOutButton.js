@@ -9,7 +9,7 @@ class SignOutButton extends React.Component {
             <React.Fragment>
                 <Grid centered>
                     <Grid.Column textAlign='right'>
-                        <Button color='teal' animated onClick={() => this.props.signOut()}>
+                        <Button color='black' animated onClick={() => this.props.signOut()}>
                             <Button.Content visible>
                                 Wyloguj
                             </Button.Content>
