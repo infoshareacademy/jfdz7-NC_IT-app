@@ -13,24 +13,24 @@ class StorageOfProducts extends Component {
         this.props.removeFavorites(favoriteId)
     }
     render() {
-        const { favorites, products } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
+        const { favorites } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         return (
             <React.Fragment>
                 {favorites.map((favorite, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
                         return (
-                            <div key={favorite.id}>
+                            <div key={favorite.productFavorite.id}>
                                 <Grid centered columns={2}>
                                     <Grid.Row>
                                         <Grid.Column floated='right' width={4}>
-                                                <strong><p>{products[favorite.key].name}</p></strong>
+                                                <strong><p>{favorite.productFavorite.name}</p></strong>
                                             </Grid.Column>
                                         <Grid.Column floated='right' width={6}>
                                         <span><p>
-                                            Najniższa cena: {Math.min.apply(Math,products[favorite.key].availabity.map((product) => {
-                                            return (product.price)
+                                            Najniższa cena: {Math.min.apply(Math,favorite.productFavorite.availabity.map((favorite) => {
+                                            return (favorite.price)
                                         }))} zł
                                         </p></span>
-                                                <p>Dostępny w <strong>{products[favorite.key].availabity.length}</strong> sklepach</p>
+                                                <p>Dostępny w <strong>{favorite.productFavorite.availabity.length}</strong> sklepach</p>
                                                 <Button secondary data-favorite-id={favorite.id} onClick={this.handleRemoveClick}>
                                                     USUŃ
                                                 </Button>

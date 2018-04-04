@@ -1,5 +1,6 @@
 import firebase from 'firebase'
 
+
 // Action types
 const SET_PRODUCTS = 'products/SET_PRODUCTS'
 
