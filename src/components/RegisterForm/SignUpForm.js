@@ -20,7 +20,6 @@ class SignUpForm extends React.Component {
 
         const {email, password, error, ...userData} = this.state;
 
-
         this.props
             .signUp(email, password, userData)
             .catch(error => this.setState({error}))
