@@ -9,6 +9,7 @@ import shops, { disableSyncShops, enableSyncShops } from './state/shops'
 import filtering from './state/filtering'
 import auth, { setUser } from './state/auth'
 import tasks from  './state/tasks'
+import searchBar from './state/searchBar'
 
 
 const reducer = combineReducers({
@@ -18,6 +19,7 @@ const reducer = combineReducers({
     shops,
     filtering: filtering,
     favorites: favorites,
+    searchBar
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

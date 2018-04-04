@@ -7,6 +7,7 @@ import { Route, BrowserRouter } from 'react-router-dom'
 
 import  FilterListForm from "./FilterListForm"
 import SingleProductToList from "./SingleProductToList";
+import SearchBar from "./SearchBar";
 
 import '../../style/ListOfProducts.css';
 
@@ -19,6 +20,7 @@ class ListOfProducts extends Component {
                 <Grid.Row>
                     <Grid.Column width={16}>
             <React.Fragment>
+                <SearchBar/>
                 <FilterListForm/>
                 <SingleProductToList />
             </React.Fragment>
