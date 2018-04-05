@@ -1,24 +1,22 @@
 import React, {Component} from 'react';
-import {Route} from 'react-router-dom';
-
+import { Route, withRouter } from 'react-router-dom'
 import ListOfProducts from "./listOfProducts/ListOfProducts";
 import StorageOfProducts from "./storageOfProducts/StorageOfProducts";
 import SignOutButton from './RegisterForm/SignOutButton';
-import SignUpForm from './RegisterForm/SignUpForm';
+import Auth from './RegisterForm/Auth';
 
-import Auth from '../components/RegisterForm/Auth';
 
-class App extends React.Component {
+class App extends Component {
     render() {
         return (
             <React.Fragment>
                 <Auth>
-                    <SignOutButton path="/"/>
+                    <Route path="/" component={SignOutButton}/>
                     <Route exact path="/" component={ListOfProducts}/>
                     <Route exact path="/storage" component={StorageOfProducts}/>
                 </Auth>
             </React.Fragment>
         )}
 }
-export default App;
+export default withRouter(App)
 

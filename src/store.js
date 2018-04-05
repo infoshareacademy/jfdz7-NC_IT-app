@@ -1,8 +1,7 @@
 import thunk from 'redux-thunk'
 import firebase from 'firebase'
 import './setupFirebase'
-import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
-import './setupFirebase';
+import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 import products, { disableSyncProducts, enableSyncProducts }  from './state/products'
 import favorites, { disableSync, enableSync } from './state/favorites'
 import shops, { disableSyncShops, enableSyncShops } from './state/shops'

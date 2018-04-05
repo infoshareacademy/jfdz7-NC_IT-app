@@ -4,8 +4,6 @@ import { activateFilter, deactivateFilter } from '../../state/filtering'
 import { Grid, Button } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 
-
-
 class FilterListForm extends Component {
     render() {
         const {favorites} = this.props;
