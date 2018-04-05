@@ -19,6 +19,7 @@ const reducer = combineReducers({
     shops,
     filtering: filtering,
     favorites: favorites,
+    searchBar
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

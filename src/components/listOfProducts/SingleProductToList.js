@@ -18,6 +18,11 @@ class SingleProductToList extends Component {
                     searchBar === undefined || searchBar === ''
                     ? true
                     : product.name.toLowerCase().indexOf(searchBar) !== -1
+                ).filter(
+                    product =>
+                        activeFilterNames === undefined || activeFilterNames === ''
+                            ? true
+                            : product.category.indexOf(activeFilterNames) !== -1
                 )
                     .map((product, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
                     return (
@@ -73,7 +78,7 @@ export default connect(
         shops: state.shops.data,
         favorites: state.favorites.data,
         activeFilterNames: state.filtering.activeFilterNames,
-        searchBar: state.filtering.searchBar
+        searchBar: state.searchBar.searchBar
     }),
     { addFavorites }
 )(SingleProductToList)

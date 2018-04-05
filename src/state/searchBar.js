@@ -1,4 +1,4 @@
-/*const ACTIVATE_SEARCH = 'filtering/ACTIVATE_FILTER'
+const ACTIVATE_SEARCH = 'filtering/ACTIVATE_FILTER'
 const DEACTIVATE_SEARCH = 'filtering/DEACTIVATE_FILTER'
 
 export const activateSearch = searchValue => ({
@@ -27,4 +27,3 @@ export default (state = initialState, action = {}) => {
             return state
     }
 }
-*/

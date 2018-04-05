@@ -2,14 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Grid, Button } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
-import { activateFilter, deactivateSearch } from '../../state/filtering'
+import { activateSearch, deactivateSearch } from '../../state/searchBar'
+import { deactivateFilter } from '../../state/filtering'
 
 
 
 class SearchBar extends Component {
     handleChange = event => {
         const searchValue = event.target.value.toLowerCase().substr(0, 20);
-        searchValue === '' ? this.props.deactivateSearch(searchValue) : this.props.activateFilter(searchValue);
+        const filterName = this.props.deactivateFilter('');
+        searchValue === '' ? this.props.deactivateSearch(searchValue) : this.props.activateSearch(searchValue);
     }
     render() {
         return (
@@ -22,7 +24,7 @@ class SearchBar extends Component {
 export default connect(
     state => ({
     }),
-    { activateFilter, deactivateSearch }
+    { activateSearch, deactivateSearch, deactivateFilter }
 )(SearchBar)
 
 
