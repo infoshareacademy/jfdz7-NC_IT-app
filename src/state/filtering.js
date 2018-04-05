@@ -18,7 +18,7 @@ export default (state = initialState, action = {}) => {
     switch (action.type) {
         case ACTIVATE_FILTER:
             return {
-                initialState,
+                ...state,
                 activeFilterNames: state.activeFilterNames.includes(action.filterName)
                     ? state.activeFilterNames
                     : state.activeFilterNames.concat(action.filterName)

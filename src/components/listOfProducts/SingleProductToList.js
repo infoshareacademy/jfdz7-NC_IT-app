@@ -1,23 +1,28 @@
 import React, { Component } from 'react'
 import { Grid, Button } from 'semantic-ui-react'
+import {Link} from 'react-router-dom';
 import { connect } from 'react-redux'
 import { addFavorites } from '../../state/favorites'
 import _ from 'underscore'
-
-
+import PreviewProduct from "../previewProduct/PreviewProduct"
 
 
 class SingleProductToList extends Component {
     render() {
-        const { products, activeFilterNames, favorites } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
+        const { products, activeFilterNames, favorites, searchBar } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         const buttonBlock = favorites.map((favorite) => favorite.productFavorite.id);
         return (
             <React.Fragment>
                 {products.filter(
                     product =>
-                        activeFilterNames.length === 0
+                    searchBar === undefined || searchBar === ''
+                    ? true
+                    : product.name.toLowerCase().indexOf(searchBar) !== -1
+                ).filter(
+                    product =>
+                        activeFilterNames === undefined || activeFilterNames === ''
                             ? true
-                            : activeFilterNames.includes(product.category)
+                            : product.category.indexOf(activeFilterNames) !== -1
                 )
                     .map((product, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
                     return (
@@ -34,10 +39,10 @@ class SingleProductToList extends Component {
                                             }))} zł
                                         </p></span>
                                         <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
-                                        <Button primary>Porównaj CENY</Button>
                                         <div>
+                                            <PreviewProduct productId={product.id} data-product-id={product.id}/>
                                             { _.contains(buttonBlock, product.id)
-                                                ? <Button>Obserwujesz</Button>
+                                                ? <Button color='green'>Obserwujesz</Button>
                                                 : <Button secondary data-product-id={product.id}
                                                           onClick={ event => {
                                                               const productId = event.target.dataset.productId
@@ -72,7 +77,8 @@ export default connect(
         products: state.products.data,
         shops: state.shops.data,
         favorites: state.favorites.data,
-        activeFilterNames: state.filtering.activeFilterNames
+        activeFilterNames: state.filtering.activeFilterNames,
+        searchBar: state.searchBar.searchBar
     }),
     { addFavorites }
 )(SingleProductToList)

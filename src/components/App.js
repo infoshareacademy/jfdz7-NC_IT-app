@@ -13,7 +13,7 @@ class App extends React.Component {
         return (
             <React.Fragment>
                 <Auth>
-                    <SignOutButton/>
+                    <SignOutButton path="/"/>
                     <Route exact path="/" component={ListOfProducts}/>
                     <Route exact path="/storage" component={StorageOfProducts}/>
                 </Auth>
