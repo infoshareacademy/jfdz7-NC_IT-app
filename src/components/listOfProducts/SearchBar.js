@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Grid, Button } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
-import { activateSearch, deactivateSearch } from '../../state/searchBar'
+import { activateFilter, deactivateSearch } from '../../state/filtering'
 
 
 
 class SearchBar extends Component {
     handleChange = event => {
         const searchValue = event.target.value.toLowerCase().substr(0, 20);
-        searchValue === '' ? this.props.deactivateSearch(searchValue) : this.props.activateSearch(searchValue);
+        searchValue === '' ? this.props.deactivateSearch(searchValue) : this.props.activateFilter(searchValue);
     }
     render() {
         return (
@@ -22,7 +22,7 @@ class SearchBar extends Component {
 export default connect(
     state => ({
     }),
-    { activateSearch, deactivateSearch }
+    { activateFilter, deactivateSearch }
 )(SearchBar)
 
 

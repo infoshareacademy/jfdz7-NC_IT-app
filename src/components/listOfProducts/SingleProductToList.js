@@ -73,7 +73,7 @@ export default connect(
         shops: state.shops.data,
         favorites: state.favorites.data,
         activeFilterNames: state.filtering.activeFilterNames,
-        searchBar: state.searchBar.searchBar
+        searchBar: state.filtering.searchBar
     }),
     { addFavorites }
 )(SingleProductToList)
