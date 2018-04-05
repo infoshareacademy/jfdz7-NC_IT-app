@@ -34,10 +34,10 @@ class SingleProductToList extends Component {
                                             }))} zł
                                         </p></span>
                                         <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
-                                        <PreviewProduct productId={product.id} data-product-id={product.id}/>
                                         <div>
+                                            <PreviewProduct productId={product.id} data-product-id={product.id}/>
                                             { _.contains(buttonBlock, product.id)
-                                                ? <Button>Obserwujesz</Button>
+                                                ? <Button color='green'>Obserwujesz</Button>
                                                 : <Button secondary data-product-id={product.id}
                                                           onClick={ event => {
                                                               const productId = event.target.dataset.productId
