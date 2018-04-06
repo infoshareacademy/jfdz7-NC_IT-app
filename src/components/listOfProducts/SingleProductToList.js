@@ -4,15 +4,30 @@ import { connect } from 'react-redux'
 import { addFavorites } from '../../state/favorites'
 import _ from 'underscore'
 import PreviewProduct from "../previewProduct/PreviewProduct"
+import { activatePagination, changePage } from "../../state/pagination";
 
 
 class SingleProductToList extends Component {
+    handleClick = event => {
+        const currentpageId = event.target.dataset.currentpageId
+        this.props.changePage(currentpageId)
+    }
     render() {
-        const { products, activeFilterNames, favorites, searchBar } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
+        const { products, activeFilterNames, favorites, searchBar, pagination } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         const buttonBlock = favorites.map((favorite) => favorite.productFavorite.id);
+
+        const indexOfLastProduct = pagination.currentPage * pagination.todosPerPage;
+        const indexOfFirstProduct = indexOfLastProduct - pagination.todosPerPage;
+        const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(products.length / pagination.todosPerPage); i++) {
+            pageNumbers.push(i);
+        }
+
         return (
             <React.Fragment>
-                {products.filter(
+                {currentProducts.filter(
                     product =>
                     searchBar === undefined || searchBar === ''
                     ? true
@@ -60,6 +75,16 @@ class SingleProductToList extends Component {
                         </div>
                     )
                 })}
+                <Grid centered>
+                    <Grid.Row>
+                {pageNumbers.map(number => {
+                    return (
+                        <Button key={number} data-currentpage-id={number} onClick={this.handleClick}>
+                            {number}
+                        </Button>
+                    )})}
+                    </Grid.Row>
+                </Grid>
             </React.Fragment>
         )
     }
@@ -77,7 +102,8 @@ export default connect(
         shops: state.shops.data,
         favorites: state.favorites.data,
         activeFilterNames: state.filtering.activeFilterNames,
-        searchBar: state.searchBar.searchBar
+        searchBar: state.searchBar.searchBar,
+        pagination: state.pagination
     }),
-    { addFavorites }
+    { addFavorites, activatePagination, changePage }
 )(SingleProductToList)
