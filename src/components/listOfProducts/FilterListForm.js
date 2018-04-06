@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { activateFilter, deactivateFilter } from '../../state/filtering'
+import { onePage, activatePagination } from '../../state/pagination'
 import { Grid, Button, Icon, Label } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 
@@ -18,12 +19,16 @@ class FilterListForm extends Component {
                                         onClick={() => {
                                             this.props.deactivateFilter();
                                             this.props.activateFilter(categoryName);
+                                            this.props.onePage();
                                         }}
                                 >
                                     POKAŻ: {categoryName}
                                 </Button>
                             ))}
-                            <Button primary onClick={() => this.props.deactivateFilter()}>POKAŻ WSZYSTKIE</Button>
+                            <Button primary onClick={() => {
+                                this.props.activatePagination();
+                                this.props.deactivateFilter();
+                            }}>POKAŻ WSZYSTKIE</Button>
                             <br/>
                             <NavLink to="/storage">
                                 <Button  style={{ marginTop: 15 }} as='div' labelPosition='right'>
@@ -53,7 +58,7 @@ export default connect(
         ),
         favorites: state.favorites.data,
     }),
-    { activateFilter, deactivateFilter }
+    { activateFilter, deactivateFilter, onePage, activatePagination }
 )(FilterListForm)
 
 

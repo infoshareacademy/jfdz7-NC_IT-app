@@ -16,12 +16,12 @@ class SingleProductToList extends Component {
         const { products, activeFilterNames, favorites, searchBar, pagination } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         const buttonBlock = favorites.map((favorite) => favorite.productFavorite.id);
 
-        const indexOfLastProduct = pagination.currentPage * pagination.todosPerPage;
-        const indexOfFirstProduct = indexOfLastProduct - pagination.todosPerPage;
+        const indexOfLastProduct = pagination.currentPage * pagination.productsPerPage;
+        const indexOfFirstProduct = indexOfLastProduct - pagination.productsPerPage;
         const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
         const pageNumbers = [];
-        for (let i = 1; i <= Math.ceil(products.length / pagination.todosPerPage); i++) {
+        for (let i = 1; i <= Math.ceil(products.length / pagination.productsPerPage); i++) {
             pageNumbers.push(i);
         }
 
