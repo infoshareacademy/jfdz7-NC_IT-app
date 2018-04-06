@@ -4,7 +4,6 @@ import ListOfProducts from "./listOfProducts/ListOfProducts";
 import StorageOfProducts from "./storageOfProducts/StorageOfProducts";
 import SignOutButton from './RegisterForm/SignOutButton';
 import Auth from './RegisterForm/Auth';
-import AlertPrice from './storageOfProducts/AlertPrice';
 
 
 class App extends Component {
@@ -12,7 +11,6 @@ class App extends Component {
         return (
             <React.Fragment>
                 <Auth>
-                    <Route path="/" component={AlertPrice}/>
                     <Route path="/" component={SignOutButton}/>
                     <Route exact path="/" component={ListOfProducts}/>
                     <Route exact path="/storage" component={StorageOfProducts}/>
