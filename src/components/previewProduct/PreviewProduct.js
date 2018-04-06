@@ -1,33 +1,70 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Button, Header, Image, Modal, Icon } from 'semantic-ui-react'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {Button, Header, Divider, Image, Modal, Icon} from 'semantic-ui-react'
+import {addFavorites} from '../../state/favorites'
+import _ from "underscore";
 
 class PreviewProduct extends Component {
-    render() {
-        const {products, productId} = this.props
-        return (
-            <Modal trigger={<Button>Basic Modal</Button>} basic size='small'>
-                <Header icon='archive' content='Archive Old Messages' />
-                <Modal.Content>
-                    <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
-                </Modal.Content>
-                <Modal.Actions>
-                    <Modal.Content>
-                        {products.map(
-                            product =>
-                                productId === product.id
-                                    ? <div key={product.id}>{product.name}</div>
-                                    : null
-                        )
-                        }
-                    </Modal.Content>
-                </Modal.Actions>
-            </Modal>
-);
-    }
-}
 
-export default connect(state => ({
-    products : state.products.data,
-    shops: state.shops.data
-}))(PreviewProduct)
+
+    render() {
+        const {products, productId, favorites} = this.props;
+        const buttonBlock = favorites.map((favorite) => favorite.productFavorite.id);
+
+        return (
+
+            products.map(
+                product =>
+                    productId === product.id
+                        ?
+                        <Modal trigger={<Button color='teal' animated>
+                            <Button.Content visible>
+                                Szczegóły
+                            </Button.Content>
+                            <Button.Content hidden>
+                                <Icon name='eye'/>
+                            </Button.Content>
+                        </Button>} dimmer='blurring'>
+                            <Modal.Header>{product.name}</Modal.Header>
+                            <Modal.Content image>
+                                <Image src={product.img} wrapped size='small'/>
+                                <Modal.Description>
+                                    <Header>{product.description}</Header>
+                                    <Divider hidden/>
+                                    <p>
+                                        Najniższa cena: {Math.min.apply(Math, product.availabity.map((product) => {
+                                        return (product.price)
+                                    }))} zł
+                                    </p>
+
+                                    <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
+                                </Modal.Description>
+                            </Modal.Content>
+                            <Modal.Actions>
+                                {_.contains(buttonBlock, product.id)
+                                    ? <Button color='green'>Obserwujesz</Button>
+                                    : <Button secondary data-product-id={product.id}
+                                              onClick={event => {
+                                                  const productId = event.target.dataset.productId
+                                                  const productFavoriteArr = products.filter(product => product.id === productId)
+                                                  const productFavorite = Object.assign({}, ...productFavoriteArr)
+                                                  this.props.addFavorites(productFavorite)
+                                              }}>
+                                        OBSERWUJ
+                                    </Button>
+                                }
+                            </Modal.Actions>
+                        </Modal>
+    : null
+    )
+
+
+    );
+    }
+    }
+
+    export default connect(state => ({
+        favorites: state.favorites.data,
+        products: state.products.data,
+        shops: state.shops.data
+    }),{addFavorites})(PreviewProduct)
