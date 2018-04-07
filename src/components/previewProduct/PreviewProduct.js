@@ -43,7 +43,8 @@ class PreviewProduct extends Component {
                                         {product.availabity.map((productShop, index) => {
                                             return (
                                                 <li key={index}>{productShop.shopName}: {productShop.price} zł</li>
-                                            )})}
+                                            )
+                                        })}
                                     </ul>
                                 </Modal.Description>
                             </Modal.Content>
@@ -62,15 +63,15 @@ class PreviewProduct extends Component {
                                 }
                             </Modal.Actions>
                         </Modal>
-    : null
-    )
+                        : null
+            )
 
 
-    );
+        );
     }
-    }
+}
 
-    export default connect(state => ({
-        favorites: state.favorites.data,
-        products: state.products.data,
-    }),{addFavorites})(PreviewProduct)
+export default connect(state => ({
+    favorites: state.favorites.data,
+    products: state.products.data,
+}), {addFavorites})(PreviewProduct)
