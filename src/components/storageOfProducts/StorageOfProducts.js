@@ -16,6 +16,13 @@ class StorageOfProducts extends Component {
         const { favorites } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         return (
             <React.Fragment>
+                {favorites.length === 0 ? (
+                    <Grid centered columns={2}>
+                        <Grid.Row>
+                    <p key='1'>Hej! Coś tu pusto :( Koniecznie obserwuj z nami produkty!</p>
+                        </Grid.Row>
+                    </Grid>
+                    ) : false}
                 {favorites.map((favorite, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
                         return (
                             <Animate to={1} from={0.1} attributeName="opacity">

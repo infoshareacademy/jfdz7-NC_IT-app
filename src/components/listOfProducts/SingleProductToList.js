@@ -70,7 +70,6 @@ class SingleProductToList extends Component {
                                                 </Button>
                                             }
                                         </div>
-
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>
