@@ -5,6 +5,7 @@ import { addFavorites } from '../../state/favorites'
 import _ from 'underscore'
 import PreviewProduct from "../previewProduct/PreviewProduct"
 import { activatePagination, changePage } from "../../state/pagination";
+import Animate from 'react-smooth'
 
 
 class SingleProductToList extends Component {
@@ -40,6 +41,7 @@ class SingleProductToList extends Component {
                 )
                     .map((product, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
                     return (
+                        <Animate to={1} from={0.1} attributeName="opacity">
                         <div key={product.id}>
                             <Grid centered columns={2}>
                                 <Grid.Row>
@@ -73,6 +75,7 @@ class SingleProductToList extends Component {
                                 </Grid.Row>
                             </Grid>
                         </div>
+                        </Animate>
                     )
                 })}
                 <Grid centered>

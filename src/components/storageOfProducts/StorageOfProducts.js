@@ -3,7 +3,7 @@ import { Grid, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { removeFavorites } from '../../state/favorites'
 import { NavLink } from 'react-router-dom'
-
+import Animate from 'react-smooth'
 
 import '../../style/ListOfProducts.css';
 
@@ -18,6 +18,7 @@ class StorageOfProducts extends Component {
             <React.Fragment>
                 {favorites.map((favorite, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
                         return (
+                            <Animate to={1} from={0.1} attributeName="opacity">
                             <div key={favorite.productFavorite.id}>
                                 <Grid centered columns={2}>
                                     <Grid.Row>
@@ -38,15 +39,18 @@ class StorageOfProducts extends Component {
                                         </Grid.Row>
                                     </Grid>
                                 </div>
+                            </Animate>
                         )
                     })}
                 <Grid centered columns={2}>
                     <Grid.Row>
+                        <Animate to={1} from={0.1} attributeName="opacity">
                 <NavLink to="/">
                     <Button primary>
                     POWRÓT
                     </Button>
                 </NavLink>
+                        </Animate>
                     </Grid.Row>
                 </Grid>
             </React.Fragment>
