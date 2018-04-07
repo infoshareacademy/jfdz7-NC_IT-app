@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {signOut} from '../../state/auth';
-import {Button, Grid, Icon} from 'semantic-ui-react';
+import {Button, Icon} from 'semantic-ui-react';
 
 class SignOutButton extends React.Component {
     render() {

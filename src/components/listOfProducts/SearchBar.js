@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Grid, Button, Icon, Input } from 'semantic-ui-react'
-import { NavLink } from 'react-router-dom'
+import { Grid, Icon, Input } from 'semantic-ui-react'
 import { activateSearch, deactivateSearch } from '../../state/searchBar'
 import { deactivateFilter } from '../../state/filtering'
 import { onePage, activatePagination } from '../../state/pagination'
@@ -18,7 +17,7 @@ class SearchBar extends Component {
     }
     handleClick= event => {
         const searchValue = event.target.value.toLowerCase().substr(0, 20);
-        _.isEmpty(searchValue) ? (this.props.activatePagination()) : null;
+        _.isEmpty(searchValue) ? this.props.activatePagination() : null;
     }
 
     render() {

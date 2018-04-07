@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { Route, withRouter } from 'react-router-dom'
-import { Grid, Button, Icon, Label, Image } from 'semantic-ui-react'
+import { Grid, Image } from 'semantic-ui-react'
 import SignOutButton from '../RegisterForm/SignOutButton';
 import logo from './logo.png'
 
