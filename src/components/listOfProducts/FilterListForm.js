@@ -4,6 +4,7 @@ import { activateFilter, deactivateFilter } from '../../state/filtering'
 import { onePage, activatePagination } from '../../state/pagination'
 import { Grid, Button, Icon, Label } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
+import Animate from 'react-smooth'
 
 class FilterListForm extends Component {
     render() {

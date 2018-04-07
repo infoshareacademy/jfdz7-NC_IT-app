@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {signIn} from '../../state/auth';
 import {Form, Button, Header, Grid, Segment, Image, Message} from 'semantic-ui-react';
 import {NavLink} from 'react-router-dom';
+import Animate from 'react-smooth'
 
 import './SignInForm.css';
 
@@ -28,6 +29,7 @@ class SignInForm extends React.Component {
 
     render() {
         return (
+            <Animate to={1} from={0.1} attributeName="opacity">
             <Grid textAlign='center' style={{height: '160%'}} verticalAlign='middle'>
                 <Grid.Column style={{maxWidth: 470}}>
                     <Header as='h2' textAlign='center'>
@@ -70,6 +72,7 @@ class SignInForm extends React.Component {
                     </Form>
                 </Grid.Column>
             </Grid>
+            </Animate>
         );
     }
 }
