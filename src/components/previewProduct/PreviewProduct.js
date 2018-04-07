@@ -10,9 +10,7 @@ class PreviewProduct extends Component {
     render() {
         const {products, productId, favorites} = this.props;
         const buttonBlock = favorites.map((favorite) => favorite.productFavorite.id);
-
         return (
-
             products.map(
                 product =>
                     productId === product.id
@@ -27,17 +25,27 @@ class PreviewProduct extends Component {
                         </Button>} dimmer='blurring'>
                             <Modal.Header>{product.name}</Modal.Header>
                             <Modal.Content image>
-                                <Image src={product.img} wrapped size='small'/>
+                                <Image src={product.img} wrapped fluid/>
                                 <Modal.Description>
                                     <Header>{product.description}</Header>
                                     <Divider hidden/>
                                     <p>
                                         Najniższa cena: {Math.min.apply(Math, product.availabity.map((product) => {
-                                        return (product.price)
+                                        return (
+                                            product.price
+                                        )
                                     }))} zł
                                     </p>
 
                                     <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
+                                    <br/>
+                                    <ul>
+                                        {product.availabity.map((productShop, index) => {
+                                            return (
+                                                <li key={index}>{productShop.shopName}: {productShop.price} zł</li>
+                                            )
+                                        })}
+                                    </ul>
                                 </Modal.Description>
                             </Modal.Content>
                             <Modal.Actions>
@@ -55,16 +63,15 @@ class PreviewProduct extends Component {
                                 }
                             </Modal.Actions>
                         </Modal>
-    : null
-    )
+                        : null
+            )
 
 
-    );
+        );
     }
-    }
+}
 
-    export default connect(state => ({
-        favorites: state.favorites.data,
-        products: state.products.data,
-        shops: state.shops.data
-    }),{addFavorites})(PreviewProduct)
+export default connect(state => ({
+    favorites: state.favorites.data,
+    products: state.products.data,
+}), {addFavorites})(PreviewProduct)
