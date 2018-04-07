@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Button, Header, Divider, Image, Modal, Icon} from 'semantic-ui-react'
+import {Button, Header, Divider, Image, Modal, Icon, List} from 'semantic-ui-react'
 import {addFavorites} from '../../state/favorites'
 import _ from "underscore";
 
@@ -37,7 +37,17 @@ class PreviewProduct extends Component {
                                     }))} zł
                                     </p>
 
-                                    <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
+                                    <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach:</p>
+
+                                    <List>
+                                        {product.availabity.map(shopName => {
+                                            return (
+                                                <List.Item key={product.availabity.shopName}>
+                                                    {product.availabity.shopName}
+                                                </List.Item>
+                                            )
+                                        })}
+                                    </List>
                                 </Modal.Description>
                             </Modal.Content>
                             <Modal.Actions>
