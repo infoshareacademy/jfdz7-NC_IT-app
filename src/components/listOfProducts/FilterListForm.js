@@ -4,11 +4,13 @@ import { activateFilter, deactivateFilter } from '../../state/filtering'
 import { onePage, activatePagination } from '../../state/pagination'
 import { Grid, Button, Icon, Label } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
+import Animate from 'react-smooth'
 
 class FilterListForm extends Component {
     render() {
         const {favorites} = this.props;
         return (
+            <Animate to={1} from={0.1} attributeName="opacity">
             <Grid centered>
                 <Grid.Row>
                     <Grid.Column>
@@ -43,6 +45,7 @@ class FilterListForm extends Component {
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
+            </Animate>
         );
     }
 }
