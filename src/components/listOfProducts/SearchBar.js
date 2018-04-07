@@ -5,6 +5,7 @@ import { activateSearch, deactivateSearch } from '../../state/searchBar'
 import { deactivateFilter } from '../../state/filtering'
 import { onePage, activatePagination } from '../../state/pagination'
 import _ from 'lodash'
+import Animate from 'react-smooth'
 
 
 
@@ -22,6 +23,7 @@ class SearchBar extends Component {
 
     render() {
         return (
+            <Animate to={1} from={0.1} attributeName="opacity">
             <Grid centered>
                 <Grid.Row>
                     <Grid.Column width={10}>
@@ -34,6 +36,7 @@ class SearchBar extends Component {
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
+            </Animate>
         )
     }
 }
