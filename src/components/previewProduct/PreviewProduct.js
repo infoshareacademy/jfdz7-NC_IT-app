@@ -40,9 +40,9 @@ class PreviewProduct extends Component {
                                     <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
                                     <br/>
                                     <ul>
-                                        {product.availabity.map(productShop => {
+                                        {product.availabity.map((productShop, index) => {
                                             return (
-                                                <li>{productShop.shopName}: {productShop.price} zł</li>
+                                                <li key={index}>{productShop.shopName}: {productShop.price} zł</li>
                                             )})}
                                     </ul>
                                 </Modal.Description>
