@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Button, Header, Divider, Image, Modal, Icon} from 'semantic-ui-react'
+import {Button, Header, Divider, Image, Modal, Icon, List} from 'semantic-ui-react'
 import {addFavorites} from '../../state/favorites'
 import _ from "underscore";
 
@@ -28,7 +28,9 @@ class PreviewProduct extends Component {
                                 <Image src={product.img} wrapped fluid/>
                                 <Modal.Description>
                                     <Header>{product.description}</Header>
+
                                     <Divider hidden/>
+
                                     <p>
                                         Najniższa cena: {Math.min.apply(Math, product.availabity.map((product) => {
                                         return (
@@ -37,15 +39,19 @@ class PreviewProduct extends Component {
                                     }))} zł
                                     </p>
 
-                                    <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach</p>
-                                    <br/>
-                                    <ul>
+                                    <Divider hidden/>
+
+                                    <p>Dostępny w <strong>{product.availabity.length}</strong> sklepach:</p>
+
+                                    <Divider hidden/>
+
+                                    <List divided relaxed>
                                         {product.availabity.map((productShop, index) => {
                                             return (
-                                                <li key={index}>{productShop.shopName}: {productShop.price} zł</li>
+                                                <List.Item key={index}>{productShop.shopName}: {productShop.price} zł</List.Item>
                                             )
                                         })}
-                                    </ul>
+                                    </List>
                                 </Modal.Description>
                             </Modal.Content>
                             <Modal.Actions>
