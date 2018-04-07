@@ -7,8 +7,6 @@ class SignOutButton extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Grid centered>
-                    <Grid.Column textAlign='right'>
                         <Button color='black' animated onClick={() => this.props.signOut()}>
                             <Button.Content visible>
                                 Wyloguj
@@ -17,8 +15,6 @@ class SignOutButton extends React.Component {
                                 <Icon name='external'/>
                             </Button.Content>
                         </Button>
-                    </Grid.Column>
-                </Grid>
             </React.Fragment>
         )
     }
