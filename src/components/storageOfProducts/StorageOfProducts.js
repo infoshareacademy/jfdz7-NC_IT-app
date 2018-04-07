@@ -13,7 +13,7 @@ class StorageOfProducts extends Component {
         this.props.removeFavorites(favoriteId)
     }
     render() {
-        const { favorites, products } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
+        const { favorites } = this.props; //component który dostaje listę produktów w propsach i wyświetlam w liście
         return (
             <React.Fragment>
                 {favorites.map((favorite, shops) => {  //.filter(product => this.props.categoryNames.includes(product.category))
@@ -40,9 +40,15 @@ class StorageOfProducts extends Component {
                                 </div>
                         )
                     })}
+                <Grid centered columns={2}>
+                    <Grid.Row>
                 <NavLink to="/">
+                    <Button primary>
                     POWRÓT
+                    </Button>
                 </NavLink>
+                    </Grid.Row>
+                </Grid>
             </React.Fragment>
         )
     }
