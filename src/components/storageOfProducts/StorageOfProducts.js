@@ -40,9 +40,15 @@ class StorageOfProducts extends Component {
                                 </div>
                         )
                     })}
+                <Grid centered columns={2}>
+                    <Grid.Row>
                 <NavLink to="/">
+                    <Button primary>
                     POWRÓT
+                    </Button>
                 </NavLink>
+                    </Grid.Row>
+                </Grid>
             </React.Fragment>
         )
     }
