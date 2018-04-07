@@ -8,7 +8,7 @@ class HomeView extends Component {
     render() {
         return (
             <React.Fragment>
-                <Grid centered verticalAlign='middle'>
+                <Grid centered verticalAlign='middle' className={'header'}>
                     <Grid.Row>
                         <Grid.Column width={2}>
                         </Grid.Column>
