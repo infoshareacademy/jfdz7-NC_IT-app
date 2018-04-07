@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Grid, Button } from 'semantic-ui-react'
+import { Grid, Button, Icon, Input } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 import { activateSearch, deactivateSearch } from '../../state/searchBar'
 import { deactivateFilter } from '../../state/filtering'
@@ -23,9 +23,18 @@ class SearchBar extends Component {
 
     render() {
         return (
+            <Grid centered>
+                <Grid.Row>
+                    <Grid.Column width={10}>
         <div>
-            <input placeholder="search" value={this.props.searchBar} onChange={this.handleChange} onKeyUp={this.handleClick}/>
+            <Input fluid
+                icon={<Icon name='search' inverted circular link />}
+                placeholder='Wyszukaj...' value={this.props.searchBar}
+                onChange={this.handleChange} onKeyUp={this.handleClick}/>
         </div>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
         )
     }
 }
