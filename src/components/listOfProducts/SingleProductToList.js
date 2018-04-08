@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Button } from 'semantic-ui-react'
+import { Grid, Button, Icon } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addFavorites } from '../../state/favorites'
 import _ from 'underscore'
@@ -58,7 +58,7 @@ class SingleProductToList extends Component {
                                         <div>
                                             <PreviewProduct productId={product.id} data-product-id={product.id}/>
                                             { _.contains(buttonBlock, product.id)
-                                                ? <Button color='green'>Obserwujesz</Button>
+                                                ? <Button color='green'><Icon name='checkmark' />Obserwujesz</Button>
                                                 : <Button secondary data-product-id={product.id}
                                                           onClick={ event => {
                                                               const productId = event.target.dataset.productId
@@ -66,7 +66,7 @@ class SingleProductToList extends Component {
                                                               const productFavorite = Object.assign({}, ...productFavoriteArr)
                                                               this.props.addFavorites(productFavorite)
                                                           }}>
-                                                    OBSERWUJ
+                                                    <Icon name='unhide' /> OBSERWUJ
                                                 </Button>
                                             }
                                         </div>
